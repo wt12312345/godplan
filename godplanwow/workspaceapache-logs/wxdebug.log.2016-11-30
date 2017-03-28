@@ -1,0 +1,1200 @@
+2016-11-30 14:50:28  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 14:50:28  [ main:17 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6f635b61, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@64047668, org.springframework.test.context.support.DirtiesContextTestExecutionListener@60f9d924, org.springframework.test.context.transaction.TransactionalTestExecutionListener@331efc39, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@37411c67]
+2016-11-30 14:50:28  [ main:157 ] - [ INFO ]  Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/applicationContext.xml]
+2016-11-30 14:50:29  [ main:414 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3483c0e9: startup date [Wed Nov 30 14:50:29 CST 2016]; root of context hierarchy
+2016-11-30 14:50:29  [ main:535 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2016-11-30 14:50:29  [ main:536 ] - [ INFO ]  Loading properties file from class path resource [conf.properties]
+2016-11-30 14:50:29  [ main:543 ] - [ INFO ]  Could not infer class for [imageUploadHandler]. Is it a factory bean? Omitting bean from annotation processing
+2016-11-30 14:50:29  [ main:654 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+2016-11-30 14:50:29  [ main:657 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@a1ddfdd]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:134)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:629)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1450)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:398)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:384)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1172)
+	at org.directwebremoting.spring.DwrHandlerMapping.initApplicationContext(DwrHandlerMapping.java:47)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	... 39 more
+Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1402)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1349)
+	... 55 more
+2016-11-30 14:51:13  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 14:51:13  [ main:20 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6f635b61, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@64047668, org.springframework.test.context.support.DirtiesContextTestExecutionListener@60f9d924, org.springframework.test.context.transaction.TransactionalTestExecutionListener@331efc39, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@37411c67]
+2016-11-30 14:51:13  [ main:155 ] - [ INFO ]  Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/applicationContext.xml]
+2016-11-30 14:51:13  [ main:403 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3483c0e9: startup date [Wed Nov 30 14:51:13 CST 2016]; root of context hierarchy
+2016-11-30 14:51:14  [ main:539 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2016-11-30 14:51:14  [ main:540 ] - [ INFO ]  Loading properties file from class path resource [conf.properties]
+2016-11-30 14:51:14  [ main:545 ] - [ INFO ]  Could not infer class for [imageUploadHandler]. Is it a factory bean? Omitting bean from annotation processing
+2016-11-30 14:51:14  [ main:666 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+2016-11-30 14:51:14  [ main:673 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@a1ddfdd]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:134)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:629)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1450)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:398)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:384)
+	at org.springframework.context.support.AbstractApplicationContext.getBeanNamesForType(AbstractApplicationContext.java:1172)
+	at org.directwebremoting.spring.DwrHandlerMapping.initApplicationContext(DwrHandlerMapping.java:47)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	... 39 more
+Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1402)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1349)
+	... 55 more
+2016-11-30 14:52:42  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 14:52:42  [ main:39 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1cd302d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@615e796d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176150c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6f5fc793, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7927bd04]
+2016-11-30 14:52:42  [ main:251 ] - [ INFO ]  Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/applicationContext.xml]
+2016-11-30 14:52:42  [ main:828 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 14:52:42 CST 2016]; root of context hierarchy
+2016-11-30 14:52:43  [ main:1261 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2016-11-30 14:52:43  [ main:1262 ] - [ INFO ]  Loading properties file from class path resource [conf.properties]
+2016-11-30 14:52:43  [ main:1633 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-11-30 14:52:43  [ main:1639 ] - [ INFO ]  HHH000412: Hibernate Core {4.2.8.Final}
+2016-11-30 14:52:43  [ main:1642 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2016-11-30 14:52:43  [ main:1643 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2016-11-30 14:52:44  [ main:2326 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-11-30 14:52:44  [ main:2701 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-11-30 14:52:44  [ main:2705 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2016-11-30 14:52:45  [ main:3323 ] - [ INFO ]  HHH000228: Running hbm2ddl schema update
+2016-11-30 14:52:45  [ main:3324 ] - [ INFO ]  HHH000102: Fetching database metadata
+2016-11-30 14:52:45  [ main:3359 ] - [ INFO ]  HHH000396: Updating schema
+2016-11-30 14:52:45  [ main:3705 ] - [ INFO ]  HHH000261: Table found: yxtchannel.address
+2016-11-30 14:52:45  [ main:3706 ] - [ INFO ]  HHH000037: Columns: [status, consignee, idcard, version, city, id, createtime, address, province, user_id, realname, district, defaultchose, mobile]
+2016-11-30 14:52:45  [ main:3706 ] - [ INFO ]  HHH000108: Foreign keys: [fk_33hg5keygw64femiy5lgd4y9t]
+2016-11-30 14:52:45  [ main:3707 ] - [ INFO ]  HHH000126: Indexes: [fk_33hg5keygw64femiy5lgd4y9t, primary]
+2016-11-30 14:52:45  [ main:3788 ] - [ INFO ]  HHH000261: Table found: yxtchannel.billvip
+2016-11-30 14:52:45  [ main:3789 ] - [ INFO ]  HHH000037: Columns: [ordernos, totalprice, status, remark, ordernum, refundprice, version, id, createtime, refundordernum, finalprice, payprice, startdate, skunum, refundpartordernum, tax, name, freight, user_id, enddate, freightrecord]
+2016-11-30 14:52:45  [ main:3789 ] - [ INFO ]  HHH000108: Foreign keys: [fk_eir4t7dfi0sq3v82jl857fdde]
+2016-11-30 14:52:45  [ main:3789 ] - [ INFO ]  HHH000126: Indexes: [uk_90smlnbwhks9fm00j1uekn05, primary, fk_eir4t7dfi0sq3v82jl857fdde]
+2016-11-30 14:52:46  [ main:3915 ] - [ INFO ]  HHH000261: Table found: yxtchannel.billvippay
+2016-11-30 14:52:46  [ main:3916 ] - [ INFO ]  HHH000037: Columns: [createtime, id, finalprice, realprice, remark, adjustprice, billvip_id, paydate, version]
+2016-11-30 14:52:46  [ main:3916 ] - [ INFO ]  HHH000108: Foreign keys: [fk_gxmalrrlibqtufcsejkkfl8y0]
+2016-11-30 14:52:46  [ main:3916 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_gxmalrrlibqtufcsejkkfl8y0]
+2016-11-30 14:52:46  [ main:3962 ] - [ INFO ]  HHH000261: Table found: yxtchannel.brand
+2016-11-30 14:52:46  [ main:3963 ] - [ INFO ]  HHH000037: Columns: [numsku, series, status, website, imglogo, origin, img, version, contentshort, id, createtime, content, nameen, numsupplier, name]
+2016-11-30 14:52:46  [ main:3963 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:46  [ main:3963 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_1cpud2wdulcobtlgkcw1w1hh4]
+2016-11-30 14:52:46  [ main:4062 ] - [ INFO ]  HHH000261: Table found: yxtchannel.cart
+2016-11-30 14:52:46  [ main:4063 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, status, productsku_id, user_id, storage, version]
+2016-11-30 14:52:46  [ main:4063 ] - [ INFO ]  HHH000108: Foreign keys: [fk_94tjs0klq3ti3pbnorndv7ecu, fk_rs971b9fo8ywcurjtliy5be4c]
+2016-11-30 14:52:46  [ main:4064 ] - [ INFO ]  HHH000126: Indexes: [fk_94tjs0klq3ti3pbnorndv7ecu, primary, fk_rs971b9fo8ywcurjtliy5be4c]
+2016-11-30 14:52:46  [ main:4119 ] - [ INFO ]  HHH000261: Table found: yxtchannel.comimg
+2016-11-30 14:52:46  [ main:4120 ] - [ INFO ]  HHH000037: Columns: [createtime, id, fun_id, long_id, img, version]
+2016-11-30 14:52:46  [ main:4120 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:46  [ main:4121 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:46  [ main:4151 ] - [ INFO ]  HHH000261: Table found: yxtchannel.comskurelatesort
+2016-11-30 14:52:46  [ main:4151 ] - [ INFO ]  HHH000037: Columns: [createtime, id, fun_id, sku_id, sort_id, version]
+2016-11-30 14:52:46  [ main:4152 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:46  [ main:4152 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:46  [ main:4205 ] - [ INFO ]  HHH000261: Table found: yxtchannel.coupon
+2016-11-30 14:52:46  [ main:4205 ] - [ INFO ]  HHH000037: Columns: [createtime, id, module, price, status, remark, ordertotal_id, usetime, user_id, validprice, warehouse, deltime, overtime, version]
+2016-11-30 14:52:46  [ main:4205 ] - [ INFO ]  HHH000108: Foreign keys: [fk_ofp1mpbsm0oq422g8n5m7wio6, fk_rv5xyktph27t7dta016r0cexj]
+2016-11-30 14:52:46  [ main:4205 ] - [ INFO ]  HHH000126: Indexes: [fk_ofp1mpbsm0oq422g8n5m7wio6, primary, fk_rv5xyktph27t7dta016r0cexj]
+2016-11-30 14:52:46  [ main:4263 ] - [ INFO ]  HHH000261: Table found: yxtchannel.couponconfig
+2016-11-30 14:52:46  [ main:4264 ] - [ INFO ]  HHH000037: Columns: [endtime, module, starttime, sharedesc, status, remark, warehouse, sharetitle, version, id, createtime, title, overdays, price, name, validprice, overtime]
+2016-11-30 14:52:46  [ main:4264 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:46  [ main:4264 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:46  [ main:4323 ] - [ INFO ]  HHH000261: Table found: yxtchannel.dictionary
+2016-11-30 14:52:46  [ main:4324 ] - [ INFO ]  HHH000037: Columns: [valstr, keyid, createtime, id, vallong, remark, name, valint, valdbl, version]
+2016-11-30 14:52:46  [ main:4324 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:46  [ main:4324 ] - [ INFO ]  HHH000126: Indexes: [uk_t54mfo97p6gg8oudayk93o496, primary]
+2016-11-30 14:52:47  [ main:5074 ] - [ INFO ]  HHH000261: Table found: yxtchannel.menu
+2016-11-30 14:52:47  [ main:5075 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, iconname, name, action, parentid, url, version]
+2016-11-30 14:52:47  [ main:5075 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:47  [ main:5075 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:47  [ main:5225 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderchild
+2016-11-30 14:52:47  [ main:5225 ] - [ INFO ]  HHH000037: Columns: [weight, storage_id, totalprice, status, ordertotal_id, remarkservice, orderno, remarkrefund, refundtime, taxrecord, rebateprice, version, id, createtime, num, tax, skutotalprice, description, name, freight, logisticsname, logisticsno, sendtime, freightrecord, freeprice, logisticstime]
+2016-11-30 14:52:47  [ main:5226 ] - [ INFO ]  HHH000108: Foreign keys: [fk_5tp6wboy7lytg0nl697pah0be]
+2016-11-30 14:52:47  [ main:5226 ] - [ INFO ]  HHH000126: Indexes: [uk_cdacgr9cvrg6oxmboxukhu3ko, primary, fk_5tp6wboy7lytg0nl697pah0be]
+2016-11-30 14:52:47  [ main:5318 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderexchange
+2016-11-30 14:52:47  [ main:5319 ] - [ INFO ]  HHH000037: Columns: [ordertotal_status, createtime, id, orderprice, price, status, remark, reason, ordertotal_id, pic, version]
+2016-11-30 14:52:47  [ main:5319 ] - [ INFO ]  HHH000108: Foreign keys: [fk_8114ix8pi3d3x3tn9slq2wmpl]
+2016-11-30 14:52:47  [ main:5319 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_8114ix8pi3d3x3tn9slq2wmpl]
+2016-11-30 14:52:47  [ main:5502 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderreturniaction
+2016-11-30 14:52:47  [ main:5503 ] - [ INFO ]  HHH000037: Columns: [usersysname, createtime, id, edittime, username, statusorder, usersys_id, status, orderno, user_id, version]
+2016-11-30 14:52:47  [ main:5503 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:47  [ main:5503 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:47  [ main:5550 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordershop
+2016-11-30 14:52:47  [ main:5551 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, shopid, orderno, logistics, version]
+2016-11-30 14:52:47  [ main:5551 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:47  [ main:5551 ] - [ INFO ]  HHH000126: Indexes: [uk_o14bktlnk5wwmttr4t2q3dmtc, primary]
+2016-11-30 14:52:47  [ main:5637 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordersku
+2016-11-30 14:52:47  [ main:5637 ] - [ INFO ]  HHH000037: Columns: [taxtotal, saleprice, weight, product_id, standard, totalprice, ordertotal_id, img, orderchild_id, code, rebateprice, version, id, createtime, num, tax, freight, productsku_id, freighttotal, productname]
+2016-11-30 14:52:47  [ main:5638 ] - [ INFO ]  HHH000108: Foreign keys: [fk_2oroaslgcswyfsxltsa8p7s48, fk_d9y48ob6frii89bqw28xtjdjg, fk_972k4x7898jwshwhqo4743t8m, fk_1bqd386r0hmpmxuo2aaip3u32]
+2016-11-30 14:52:47  [ main:5638 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_2oroaslgcswyfsxltsa8p7s48, fk_d9y48ob6frii89bqw28xtjdjg, fk_972k4x7898jwshwhqo4743t8m, fk_1bqd386r0hmpmxuo2aaip3u32]
+2016-11-30 14:52:47  [ main:5781 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderskudetail
+2016-11-30 14:52:47  [ main:5781 ] - [ INFO ]  HHH000037: Columns: [taxtotal, codestorage, saleprice, weight, product_id, standard, totalprice, ordertotal_id, img, orderchild_id, code, version, bodedprice, id, createtime, num, tax, freight, productsku_id, freighttotal, productname]
+2016-11-30 14:52:47  [ main:5782 ] - [ INFO ]  HHH000108: Foreign keys: [fk_m8x0kl3p3vifycur1og285pmq, fk_3me6lmntfd8ki1ehmjf4ew3sq, fk_qno4o7u30e3yvgclqj83xwsya, fk_pdggrrmpvhmpccaprahkj8igv]
+2016-11-30 14:52:47  [ main:5782 ] - [ INFO ]  HHH000126: Indexes: [fk_m8x0kl3p3vifycur1og285pmq, fk_3me6lmntfd8ki1ehmjf4ew3sq, fk_qno4o7u30e3yvgclqj83xwsya, primary, fk_pdggrrmpvhmpccaprahkj8igv]
+2016-11-30 14:52:48  [ main:5895 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertemp
+2016-11-30 14:52:48  [ main:5895 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, num, usersys_id, name, user_id, customername, version]
+2016-11-30 14:52:48  [ main:5896 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:5896 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:48  [ main:5924 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertempsub
+2016-11-30 14:52:48  [ main:5925 ] - [ INFO ]  HHH000037: Columns: [storage_id, remark, consignee, remarkservice, idcard, orderno, ordertemp_id, sku, version, city, id, createtime, shopid, address, province, realname, district, logistics, mobile]
+2016-11-30 14:52:48  [ main:5925 ] - [ INFO ]  HHH000108: Foreign keys: [fk_h8tgdh0j1er73psh9dc2tncyv]
+2016-11-30 14:52:48  [ main:5925 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_h8tgdh0j1er73psh9dc2tncyv, uk_p1xok8sgjvuo1do2r1rf6grl4]
+2016-11-30 14:52:48  [ main:5972 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertotal
+2016-11-30 14:52:48  [ main:5973 ] - [ INFO ]  HHH000037: Columns: [weight, remark, coupon_id, consignee, orderno, returntime, tradeno, paytime, rebateprice, city, version, createtime, id, submittime, statusreturn, description, name, province, uservip_id, user_id, sendtime, district, outtime, canceltime, totalprice, status, idcard, payway, remarkrefund, refundprice, refundtime, num, payprice, tax, skutotalprice, address, freight, ordernothird, realname, freeprice, ordersource, mobile]
+2016-11-30 14:52:48  [ main:5973 ] - [ INFO ]  HHH000108: Foreign keys: [fk_kwkl1un7h1b32fh8b1uxqcc30, fk_tgs4hgq4dqap3v1ajyo6j7s09, fk_clipxxgdqatmdc5wf40rjhwmu]
+2016-11-30 14:52:48  [ main:5973 ] - [ INFO ]  HHH000126: Indexes: [fk_kwkl1un7h1b32fh8b1uxqcc30, uk_pvl4bi4ufq8ipkk7a8lidgxj4, primary, fk_tgs4hgq4dqap3v1ajyo6j7s09, fk_clipxxgdqatmdc5wf40rjhwmu, uk_jjb2b0uq7arcjmgf5b96gmr2e]
+2016-11-30 14:52:48  [ main:6015 ] - [ INFO ]  HHH000261: Table found: yxtchannel.product
+2016-11-30 14:52:48  [ main:6015 ] - [ INFO ]  HHH000037: Columns: [combo, salefirstprice, contentshort, version, defaultprice4, createtime, id, edittime, sortindex, stock, sales, name, salesecondprice4, salethirdprice, status, defaultprice, brand_id, origin, salesecondprice, salethirdprice4, nameen, content, pv, seo, salefirstprice4, storage]
+2016-11-30 14:52:48  [ main:6015 ] - [ INFO ]  HHH000108: Foreign keys: [fk_e170op5kedic2jolyiimwqfaj]
+2016-11-30 14:52:48  [ main:6016 ] - [ INFO ]  HHH000126: Indexes: [fk_e170op5kedic2jolyiimwqfaj, primary]
+2016-11-30 14:52:48  [ main:6056 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productattr
+2016-11-30 14:52:48  [ main:6056 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, status, name, parentid, version]
+2016-11-30 14:52:48  [ main:6056 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:6057 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:48  [ main:6160 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productcombo
+2016-11-30 14:52:48  [ main:6161 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, includesku_id, sku_id, version]
+2016-11-30 14:52:48  [ main:6161 ] - [ INFO ]  HHH000108: Foreign keys: [fk_or9n9u4ovn39lj03qh94ug4ig, fk_mrrdlp4aoeb8168wgdme5ueg4]
+2016-11-30 14:52:48  [ main:6161 ] - [ INFO ]  HHH000126: Indexes: [fk_or9n9u4ovn39lj03qh94ug4ig, primary, fk_mrrdlp4aoeb8168wgdme5ueg4]
+2016-11-30 14:52:48  [ main:6270 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productforuservip
+2016-11-30 14:52:48  [ main:6270 ] - [ INFO ]  HHH000037: Columns: [salesecondprice, code, salethirdprice4, salefirstprice, version, id, createtime, saleiprice4, salesecondprice4, productsku_id, salethirdprice, user_id, salefirstprice4, storage]
+2016-11-30 14:52:48  [ main:6271 ] - [ INFO ]  HHH000108: Foreign keys: [fk_jkfrhfo49aruffyih4sk2v0e1, fk_s38ksitx24vrvrwwmxkkuqb0]
+2016-11-30 14:52:48  [ main:6271 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_jkfrhfo49aruffyih4sk2v0e1, fk_s38ksitx24vrvrwwmxkkuqb0]
+2016-11-30 14:52:48  [ main:6499 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productimg
+2016-11-30 14:52:48  [ main:6500 ] - [ INFO ]  HHH000037: Columns: [img2, createtime, id, product_id, img, img3, version]
+2016-11-30 14:52:48  [ main:6500 ] - [ INFO ]  HHH000108: Foreign keys: [fk_sy6dq3b9t2tgtgebut5q726i8]
+2016-11-30 14:52:48  [ main:6500 ] - [ INFO ]  HHH000126: Indexes: [fk_sy6dq3b9t2tgtgebut5q726i8, primary]
+2016-11-30 14:52:48  [ main:6641 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productindex
+2016-11-30 14:52:48  [ main:6642 ] - [ INFO ]  HHH000037: Columns: [createtime, id, title, product_id, status, url, productname, imgurl, version]
+2016-11-30 14:52:48  [ main:6642 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:6642 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:48  [ main:6727 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productrelateattr
+2016-11-30 14:52:48  [ main:6727 ] - [ INFO ]  HHH000037: Columns: [attr_id, createtime, id, product_id, version]
+2016-11-30 14:52:48  [ main:6728 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:6728 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:48  [ main:6766 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productrelatesort
+2016-11-30 14:52:48  [ main:6767 ] - [ INFO ]  HHH000037: Columns: [createtime, id, product_id, sort_id, version]
+2016-11-30 14:52:48  [ main:6767 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:6768 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:48  [ main:6809 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productsku
+2016-11-30 14:52:48  [ main:6809 ] - [ INFO ]  HHH000037: Columns: [weight, product_id, expirationdate, standardsub, img, combo, salefirstprice, currency, version, defaultprice4, createtime, id, edittime, costprice4, stock, freight4, name, saleiprice4, salesecondprice4, salethirdprice, stockboded, standard, status, cifupprice4, defaultprice, salesecondprice, code, upc, salethirdprice4, cifuphkprice4, sale, unitnum, salefirstprice4, storage]
+2016-11-30 14:52:48  [ main:6810 ] - [ INFO ]  HHH000108: Foreign keys: [fk_mbw1fgumfvdu215yvqad1id2a]
+2016-11-30 14:52:48  [ main:6810 ] - [ INFO ]  HHH000126: Indexes: [uk_93xr7r0x7n4u6uqyqqew4t1t4, fk_mbw1fgumfvdu215yvqad1id2a, uk_gaxlb4mdwib7rdhb9j2l96c11, primary]
+2016-11-30 14:52:48  [ main:6841 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productsort
+2016-11-30 14:52:48  [ main:6841 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, status, name, parentid, version]
+2016-11-30 14:52:48  [ main:6841 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:48  [ main:6841 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:49  [ main:6900 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchase
+2016-11-30 14:52:49  [ main:6901 ] - [ INFO ]  HHH000037: Columns: [storage_id, approvaltime, remark, ordertime, currency, version, createtime, id, suppliermobile, username, usernamefinish, name, storagerealname, usernameapproval, customername, arrivaltime, numsku, storagemobile, usersys_id, supplier_id, status, totalprice, suppliername, storagename, numskureal, totalrealprice, jsonitemuser, finishtime, num, usernameprice, supplierrealname, numreal, numunit, jsonbrand, purchaseno]
+2016-11-30 14:52:49  [ main:6903 ] - [ INFO ]  HHH000108: Foreign keys: [fk_kys1sn33kac01kv020ig13hvb, fk_taugdjh8uy1j3p9nv8qqennx5, fk_h3sjtsy8l6ja52gb8k87yx82s]
+2016-11-30 14:52:49  [ main:6903 ] - [ INFO ]  HHH000126: Indexes: [fk_kys1sn33kac01kv020ig13hvb, fk_taugdjh8uy1j3p9nv8qqennx5, fk_h3sjtsy8l6ja52gb8k87yx82s, primary, uk_2rkoo548a1mb3xvxts75hwsvm]
+2016-11-30 14:52:49  [ main:7064 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchaseitem
+2016-11-30 14:52:49  [ main:7064 ] - [ INFO ]  HHH000037: Columns: [usersys_id, standard, status, remark, remarkreject, code, upc, version, rejectreason, id, createtime, username, unitnum, num, purchase_id, usetime, numunit, purchaseno, customername, productname]
+2016-11-30 14:52:49  [ main:7065 ] - [ INFO ]  HHH000108: Foreign keys: [fk_40ge15y0x1thoygtq2c734w6c]
+2016-11-30 14:52:49  [ main:7065 ] - [ INFO ]  HHH000126: Indexes: [fk_40ge15y0x1thoygtq2c734w6c, primary]
+2016-11-30 14:52:49  [ main:7139 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchasesku
+2016-11-30 14:52:49  [ main:7139 ] - [ INFO ]  HHH000037: Columns: [rejecttime, usersys_id, standard, remark, totalprice, status, remarkreject, totalrealprice, code, ordertime, upc, version, id, createtime, exp, unitnum, num, price, purchase_id, name, planarrivaltime, numreal, arrivaltime]
+2016-11-30 14:52:49  [ main:7140 ] - [ INFO ]  HHH000108: Foreign keys: [fk_qr37ixoajy7d3554tfdbu4ukt, fk_6foxcgirs9b1hrwtyropoc8w6]
+2016-11-30 14:52:49  [ main:7140 ] - [ INFO ]  HHH000126: Indexes: [fk_qr37ixoajy7d3554tfdbu4ukt, primary, fk_6foxcgirs9b1hrwtyropoc8w6]
+2016-11-30 14:52:49  [ main:7302 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordaction
+2016-11-30 14:52:49  [ main:7302 ] - [ INFO ]  HHH000037: Columns: [usersysname, module, usersys_id, remark, nickname, orderno, longid, version, ip, id, createtime, content, loginname, title, price, name, user_id]
+2016-11-30 14:52:49  [ main:7302 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:49  [ main:7303 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8007 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordcoupon
+2016-11-30 14:52:50  [ main:8008 ] - [ INFO ]  HHH000037: Columns: [createtime, id, user_id, couponconfig_id, version]
+2016-11-30 14:52:50  [ main:8008 ] - [ INFO ]  HHH000108: Foreign keys: [fk_hsmwmlwhvr5thnymq6fusquu2, fk_coy9ruvtgx5b5pwg7o7h58yap]
+2016-11-30 14:52:50  [ main:8008 ] - [ INFO ]  HHH000126: Indexes: [fk_hsmwmlwhvr5thnymq6fusquu2, primary, fk_coy9ruvtgx5b5pwg7o7h58yap]
+2016-11-30 14:52:50  [ main:8034 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recorderp
+2016-11-30 14:52:50  [ main:8034 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, username, status, remark, orderno, version]
+2016-11-30 14:52:50  [ main:8035 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8035 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8060 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordmanagevisit
+2016-11-30 14:52:50  [ main:8061 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, usersys_id, name, url, ip, version]
+2016-11-30 14:52:50  [ main:8061 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8061 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8093 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordsms
+2016-11-30 14:52:50  [ main:8094 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, authcode, status, err, msg, mobile, ip, version]
+2016-11-30 14:52:50  [ main:8094 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8094 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8133 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordvisit
+2016-11-30 14:52:50  [ main:8133 ] - [ INFO ]  HHH000037: Columns: [os, module, remark, networktype, longid, osversion, version, ip, phonetype, id, createtime, title, browser, month, year, user_id, day, phonebrand]
+2016-11-30 14:52:50  [ main:8133 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8134 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8182 ] - [ INFO ]  HHH000261: Table found: yxtchannel.role
+2016-11-30 14:52:50  [ main:8182 ] - [ INFO ]  HHH000037: Columns: [createtime, id, menus, urimail, remark, status, description, uristorage, name, uri, urisupplier, version]
+2016-11-30 14:52:50  [ main:8182 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8182 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8220 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selbatch
+2016-11-30 14:52:50  [ main:8220 ] - [ INFO ]  HHH000037: Columns: [createtime, id, usersys_id, remark, name, user_id, selno, version]
+2016-11-30 14:52:50  [ main:8221 ] - [ INFO ]  HHH000108: Foreign keys: [fk_efbjqwigb0c3gegwdxq3bfgf9, fk_dulot7nr2g04q5rq9c36ebib6]
+2016-11-30 14:52:50  [ main:8221 ] - [ INFO ]  HHH000126: Indexes: [fk_efbjqwigb0c3gegwdxq3bfgf9, fk_dulot7nr2g04q5rq9c36ebib6, uk_o8u4b0qnbn4hjy979bq509tbg, primary]
+2016-11-30 14:52:50  [ main:8247 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selbatchsku
+2016-11-30 14:52:50  [ main:8248 ] - [ INFO ]  HHH000037: Columns: [createtime, id, saleprice, standard, selbatch_id, remark, sales, name, saletime, version]
+2016-11-30 14:52:50  [ main:8248 ] - [ INFO ]  HHH000108: Foreign keys: [fk_4iqqe9rt9odlxvjobwwbhil3g]
+2016-11-30 14:52:50  [ main:8249 ] - [ INFO ]  HHH000126: Indexes: [fk_4iqqe9rt9odlxvjobwwbhil3g, primary]
+2016-11-30 14:52:50  [ main:8291 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selsku
+2016-11-30 14:52:50  [ main:8291 ] - [ INFO ]  HHH000037: Columns: [factoryprice, saleprice, product_id, standard, website, status, brand_id, code, salemaxprice, version, id, createtime, applyage, name, codetemp]
+2016-11-30 14:52:50  [ main:8292 ] - [ INFO ]  HHH000108: Foreign keys: [fk_977ycjuywxx7knuqk8mrvwu8s]
+2016-11-30 14:52:50  [ main:8292 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_86lw0x9u4hajo6uatfmtmwlvc, fk_977ycjuywxx7knuqk8mrvwu8s]
+2016-11-30 14:52:50  [ main:8353 ] - [ INFO ]  HHH000261: Table found: yxtchannel.sendmail
+2016-11-30 14:52:50  [ main:8354 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, username, title, status, mailaddr, sendtime, errmsg, numtry, version]
+2016-11-30 14:52:50  [ main:8354 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8354 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8377 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statorder
+2016-11-30 14:52:50  [ main:8377 ] - [ INFO ]  HHH000037: Columns: [numboded, salesamerica, payamerica, refundamerica, version, id, createtime, edittime, num, salesboded, numamerica, sales, refund, month, refundboded, pay, payboded, year, day]
+2016-11-30 14:52:50  [ main:8377 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8377 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8424 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statorderi
+2016-11-30 14:52:50  [ main:8425 ] - [ INFO ]  HHH000037: Columns: [version, id, createtime, edittime, num, time, refund, sales, month, pay, year, user_id, uservip_id, day]
+2016-11-30 14:52:50  [ main:8425 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8425 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8461 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statsales
+2016-11-30 14:52:50  [ main:8462 ] - [ INFO ]  HHH000037: Columns: [totalpriceboded, numboded, standard, totalprice, standardsub, code, version, id, createtime, edittime, num, month, year, day, productname]
+2016-11-30 14:52:50  [ main:8462 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8462 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8485 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statvisit
+2016-11-30 14:52:50  [ main:8485 ] - [ INFO ]  HHH000037: Columns: [module, remark, longid, version, id, createtime, addtime, title, uv, month, year, pv, day]
+2016-11-30 14:52:50  [ main:8486 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8487 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8518 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storage
+2016-11-30 14:52:50  [ main:8519 ] - [ INFO ]  HHH000037: Columns: [createtime, id, numsku, orderstatus, numbrand, numsupplier, name, freighttmpl, realname, taxtmpl, mobile, version]
+2016-11-30 14:52:50  [ main:8519 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8519 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:50  [ main:8570 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageallotstock
+2016-11-30 14:52:50  [ main:8570 ] - [ INFO ]  HHH000037: Columns: [usernamereject, approvaltime, remark, plantime, version, createtime, id, username, usernamefinish, storageoutrealname, name, storageinrealname, intime, storagein_id, allotno, outtime, storageinname, numsku, approvalouttime, usersys_id, rejecttime, status, remarkreject, usernameapprovalin, storageinmobile, handletime, finishtime, num, usernameapprovalout, storageout_id, storageoutmobile, approvalintime, numreal, storageoutname]
+2016-11-30 14:52:50  [ main:8571 ] - [ INFO ]  HHH000108: Foreign keys: [fk_rw7s634c4kbcvq8tnyy78pr36, fk_o3o10yom20ctsnuydcnxcfyc0, fk_71vmqfdk50pthygv3n2xg9xh4]
+2016-11-30 14:52:50  [ main:8571 ] - [ INFO ]  HHH000126: Indexes: [uk_870wxm8biac47nve8pg83083, primary, fk_rw7s634c4kbcvq8tnyy78pr36, fk_o3o10yom20ctsnuydcnxcfyc0, fk_71vmqfdk50pthygv3n2xg9xh4]
+2016-11-30 14:52:50  [ main:8604 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageallotstocksku
+2016-11-30 14:52:50  [ main:8605 ] - [ INFO ]  HHH000037: Columns: [usersys_id, standard, remark, code, upc, version, storageallotstock_id, id, createtime, num, stock, name, numreal]
+2016-11-30 14:52:50  [ main:8605 ] - [ INFO ]  HHH000108: Foreign keys: [fk_7g2weywo29dfk5dbokl02kgro, fk_sigrsl5s5ixluy9db57nkwwmu]
+2016-11-30 14:52:50  [ main:8605 ] - [ INFO ]  HHH000126: Indexes: [fk_7g2weywo29dfk5dbokl02kgro, primary, fk_sigrsl5s5ixluy9db57nkwwmu]
+2016-11-30 14:52:50  [ main:8622 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageinoutstock
+2016-11-30 14:52:50  [ main:8623 ] - [ INFO ]  HHH000037: Columns: [usernamereject, storage_id, belong, approvaltime, remark, customer, version, createtime, id, username, usernamefinish, name, storagerealname, usernameapproval, numsku, storagemobile, usersys_id, rejecttime, status, remarkreject, inoutstockno, storagename, handletime, finishtime, num, address]
+2016-11-30 14:52:50  [ main:8623 ] - [ INFO ]  HHH000108: Foreign keys: [fk_rqm1fyocrxxkddvyt9wf8orvr, fk_1wk53jdkas38x2k2pp6kp72dm]
+2016-11-30 14:52:50  [ main:8624 ] - [ INFO ]  HHH000126: Indexes: [fk_rqm1fyocrxxkddvyt9wf8orvr, fk_1wk53jdkas38x2k2pp6kp72dm, uk_cd11djipunrp8a3ya5e8hxpue, primary]
+2016-11-30 14:52:50  [ main:8675 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageinoutstocksku
+2016-11-30 14:52:50  [ main:8675 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, usersys_id, stock, standard, name, storageinoutstock_id, code, upc, version]
+2016-11-30 14:52:50  [ main:8676 ] - [ INFO ]  HHH000108: Foreign keys: [fk_e0oxp5irnstvuq09xm3orj9ug, fk_7lc7xdlh075x5llx38lad0fsi]
+2016-11-30 14:52:50  [ main:8676 ] - [ INFO ]  HHH000126: Indexes: [fk_e0oxp5irnstvuq09xm3orj9ug, fk_7lc7xdlh075x5llx38lad0fsi, primary]
+2016-11-30 14:52:50  [ main:8703 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storagerecordstock
+2016-11-30 14:52:50  [ main:8704 ] - [ INFO ]  HHH000037: Columns: [inouttime, storage_id, belong, standard, belong_id, belongno, storagename, code, version, id, createtime, num, stock, name]
+2016-11-30 14:52:50  [ main:8704 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:50  [ main:8704 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:51  [ main:9369 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storagesku
+2016-11-30 14:52:51  [ main:9370 ] - [ INFO ]  HHH000037: Columns: [codestorage, storage_id, standard, status, brand_id, code, upc, version, bodedprice, id, createtime, stock, name, productsku_id]
+2016-11-30 14:52:51  [ main:9370 ] - [ INFO ]  HHH000108: Foreign keys: [fk_sfe3qnn06p5q2ht5ie2821avi, fk_97ttgrb8aq5yg17y69f4q9vlx, fk_jt6yw8h0okhl8pxa0jyhi7brn]
+2016-11-30 14:52:51  [ main:9370 ] - [ INFO ]  HHH000126: Indexes: [fk_sfe3qnn06p5q2ht5ie2821avi, fk_97ttgrb8aq5yg17y69f4q9vlx, fk_jt6yw8h0okhl8pxa0jyhi7brn, primary]
+2016-11-30 14:52:51  [ main:9439 ] - [ INFO ]  HHH000261: Table found: yxtchannel.supplier
+2016-11-30 14:52:51  [ main:9440 ] - [ INFO ]  HHH000037: Columns: [createtime, id, numsku, numbrand, address, name, realname, mobile, version]
+2016-11-30 14:52:51  [ main:9440 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:51  [ main:9440 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:51  [ main:9507 ] - [ INFO ]  HHH000261: Table found: yxtchannel.suppliersku
+2016-11-30 14:52:51  [ main:9508 ] - [ INFO ]  HHH000037: Columns: [createtime, id, supplier_id, standard, name, brand_id, productsku_id, code, ups, upc, version]
+2016-11-30 14:52:51  [ main:9508 ] - [ INFO ]  HHH000108: Foreign keys: [fk_1nnspkn4iyns0gr7cc7ua3682, fk_mq0emtigxihqmtc4o1bcaqjkq, fk_39xx4opymtur4lqy9031mmxm4]
+2016-11-30 14:52:51  [ main:9508 ] - [ INFO ]  HHH000126: Indexes: [fk_1nnspkn4iyns0gr7cc7ua3682, fk_mq0emtigxihqmtc4o1bcaqjkq, primary, fk_39xx4opymtur4lqy9031mmxm4]
+2016-11-30 14:52:51  [ main:9570 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductbrand
+2016-11-30 14:52:51  [ main:9570 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:52:51  [ main:9571 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:51  [ main:9571 ] - [ INFO ]  HHH000126: Indexes: [primary, name_unique]
+2016-11-30 14:52:51  [ main:9643 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductcompany
+2016-11-30 14:52:51  [ main:9643 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:52:51  [ main:9644 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:51  [ main:9644 ] - [ INFO ]  HHH000126: Indexes: [primary, name_unique]
+2016-11-30 14:52:51  [ main:9794 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductsale
+2016-11-30 14:52:51  [ main:9795 ] - [ INFO ]  HHH000037: Columns: [endtime, gift, saleprice, starttime, sort, belong, standard, remark, thirdproductcompany_id, agestart, url, version, salesstart, id, createtime, payprice, salesrecord, ageend, sales, name, sort_id, thirdproductbrand_id, soldout]
+2016-11-30 14:52:51  [ main:9795 ] - [ INFO ]  HHH000108: Foreign keys: [fk_s85ci2hbb4flhi135ikkvbbu1, fk_1jxgc4xgrxjdskr798nttw3mc]
+2016-11-30 14:52:51  [ main:9795 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_s85ci2hbb4flhi135ikkvbbu1, fk_1jxgc4xgrxjdskr798nttw3mc]
+2016-11-30 14:52:52  [ main:9855 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductsort
+2016-11-30 14:52:52  [ main:9855 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:52:52  [ main:9856 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:52  [ main:9856 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:52  [ main:9939 ] - [ INFO ]  HHH000261: Table found: yxtchannel.uri
+2016-11-30 14:52:52  [ main:9940 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, remark, name, action, parentid, url, version]
+2016-11-30 14:52:52  [ main:9940 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:52  [ main:9940 ] - [ INFO ]  HHH000126: Indexes: [uk_5r0dw5fjs00jdbjdbydy1aryd, primary]
+2016-11-30 14:52:52  [ main:9972 ] - [ INFO ]  HHH000261: Table found: yxtchannel.urimail
+2016-11-30 14:52:52  [ main:9972 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, remark, name, action, version]
+2016-11-30 14:52:52  [ main:9973 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:52  [ main:9973 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_2gyypsy28l781887wdmm9y77w]
+2016-11-30 14:52:52  [ main:10013 ] - [ INFO ]  HHH000261: Table found: yxtchannel.user
+2016-11-30 14:52:52  [ main:10014 ] - [ INFO ]  HHH000037: Columns: [birthday, sex, weight, couponnum, street, numorder, password, refreshinfotime, imghead, city, version, createtime, id, loginname, lastlogintime, orgname, province, openid, district, qq, numsku, totalprice, status, nickname, idcard, usertype, refundprice, country, imgheadwx, payprice, email, realname, freeprice, mobile]
+2016-11-30 14:52:52  [ main:10014 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:52  [ main:10014 ] - [ INFO ]  HHH000126: Indexes: [uk_6ondlsvpclf2syh8i4g9aujjv, uk_5l3g9ud1bksoc7tfcn2wg4cbt, uk_2i4ni4xn4lgj8ljytfle585je, primary, uk_5mdt50kkc2eq7sfklqmrdnh4d, uk_5iebj9qwxsnoshbaq6w834t0y, uk_e6gkqunxajvyxl5uctpl2vl2p]
+2016-11-30 14:52:52  [ main:10058 ] - [ INFO ]  HHH000261: Table found: yxtchannel.usersys
+2016-11-30 14:52:52  [ main:10058 ] - [ INFO ]  HHH000037: Columns: [menus, urimail, role_id, status, rolepurchase, rolesupplier, uri, password, version, id, createtime, loginname, lastlogintime, email, uristorage, name, urisupplier]
+2016-11-30 14:52:52  [ main:10059 ] - [ INFO ]  HHH000108: Foreign keys: [fk_4gxypcjr8qauyuytlo269xng6]
+2016-11-30 14:52:52  [ main:10059 ] - [ INFO ]  HHH000126: Indexes: [fk_4gxypcjr8qauyuytlo269xng6, uk_lry14mhj1hdqnhlo7g7217i6q, primary]
+2016-11-30 14:52:52  [ main:10114 ] - [ INFO ]  HHH000261: Table found: yxtchannel.uservip
+2016-11-30 14:52:52  [ main:10114 ] - [ INFO ]  HHH000037: Columns: [authtype, sex, imgidcard, website, status, remark, imgstore, idcard, imgcharter, version, city, keyid, id, createtime, imgidcardbak, jobtype, address, name, province, user_id, realname, district, mobile]
+2016-11-30 14:52:52  [ main:10114 ] - [ INFO ]  HHH000108: Foreign keys: [fk_5vnl3y91csbhtn4othvk5nip]
+2016-11-30 14:52:52  [ main:10115 ] - [ INFO ]  HHH000126: Indexes: [fk_5vnl3y91csbhtn4othvk5nip, uk_i811jnsf94kuexyqjxkkjkwt0, uk_skxer4x7ldeclinrf4nq9q487, primary]
+2016-11-30 14:52:52  [ main:10173 ] - [ INFO ]  HHH000261: Table found: yxtchannel.visitagent
+2016-11-30 14:52:52  [ main:10174 ] - [ INFO ]  HHH000037: Columns: [createtime, id, info, version]
+2016-11-30 14:52:52  [ main:10174 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:52:52  [ main:10174 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:52:52  [ main:10177 ] - [ INFO ]  HHH000232: Schema update complete
+2016-11-30 14:52:53  [ main:11195 ] - [ INFO ]  Starting: DwrController v3.0.0-FINAL on MockServletContext / JDK 1.7.0_51 from Oracle Corporation at 
+2016-11-30 14:52:53  [ main:11410 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+2016-11-30 14:52:53  [ main:11420 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@194d35d]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:134)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at org.directwebremoting.spring.DwrHandlerMapping.initApplicationContext(DwrHandlerMapping.java:49)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	... 39 more
+Caused by: java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.directwebremoting.server.servlet3.Servlet30ContainerAbstraction.isNativeEnvironment(Servlet30ContainerAbstraction.java:45)
+	at org.directwebremoting.impl.StartupUtil.resolveMultipleImplementations(StartupUtil.java:376)
+	at org.directwebremoting.impl.StartupUtil.setupDefaultContainer(StartupUtil.java:262)
+	at org.directwebremoting.spring.DwrController.afterPropertiesSet(DwrController.java:191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 55 more
+2016-11-30 14:57:03  [ main:0 ] - [ INFO ]  Could not detect default resource locations for test class [com.hq.yxt.channel.controller.test.TestUserController]: no resource found for suffixes {-context.xml}.
+2016-11-30 14:57:03  [ main:5 ] - [ INFO ]  Could not detect default configuration classes for test class [com.hq.yxt.channel.controller.test.TestUserController]: TestUserController does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2016-11-30 14:57:49  [ main:0 ] - [ INFO ]  Could not detect default resource locations for test class [com.hq.yxt.channel.controller.test.TestUserController]: no resource found for suffixes {-context.xml}.
+2016-11-30 14:57:49  [ main:6 ] - [ INFO ]  Could not detect default configuration classes for test class [com.hq.yxt.channel.controller.test.TestUserController]: TestUserController does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2016-11-30 14:58:06  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 14:58:06  [ main:23 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1cd302d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@615e796d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176150c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6f5fc793, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7927bd04]
+2016-11-30 14:58:06  [ main:157 ] - [ INFO ]  Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/applicationContext.xml]
+2016-11-30 14:58:06  [ main:589 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 14:58:06 CST 2016]; root of context hierarchy
+2016-11-30 14:58:07  [ main:997 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2016-11-30 14:58:07  [ main:997 ] - [ INFO ]  Loading properties file from class path resource [conf.properties]
+2016-11-30 14:58:07  [ main:1279 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-11-30 14:58:07  [ main:1294 ] - [ INFO ]  HHH000412: Hibernate Core {4.2.8.Final}
+2016-11-30 14:58:07  [ main:1294 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2016-11-30 14:58:07  [ main:1294 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2016-11-30 14:58:08  [ main:2142 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-11-30 14:58:08  [ main:2486 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-11-30 14:58:08  [ main:2502 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2016-11-30 14:58:09  [ main:3133 ] - [ INFO ]  HHH000228: Running hbm2ddl schema update
+2016-11-30 14:58:09  [ main:3133 ] - [ INFO ]  HHH000102: Fetching database metadata
+2016-11-30 14:58:09  [ main:3148 ] - [ INFO ]  HHH000396: Updating schema
+2016-11-30 14:58:09  [ main:3227 ] - [ INFO ]  HHH000261: Table found: yxtchannel.address
+2016-11-30 14:58:09  [ main:3227 ] - [ INFO ]  HHH000037: Columns: [status, consignee, idcard, version, city, id, createtime, address, province, user_id, realname, district, defaultchose, mobile]
+2016-11-30 14:58:09  [ main:3227 ] - [ INFO ]  HHH000108: Foreign keys: [fk_33hg5keygw64femiy5lgd4y9t]
+2016-11-30 14:58:09  [ main:3227 ] - [ INFO ]  HHH000126: Indexes: [fk_33hg5keygw64femiy5lgd4y9t, primary]
+2016-11-30 14:58:09  [ main:3265 ] - [ INFO ]  HHH000261: Table found: yxtchannel.billvip
+2016-11-30 14:58:09  [ main:3265 ] - [ INFO ]  HHH000037: Columns: [ordernos, totalprice, status, remark, ordernum, refundprice, version, id, createtime, refundordernum, finalprice, payprice, startdate, skunum, refundpartordernum, tax, name, freight, user_id, enddate, freightrecord]
+2016-11-30 14:58:09  [ main:3266 ] - [ INFO ]  HHH000108: Foreign keys: [fk_eir4t7dfi0sq3v82jl857fdde]
+2016-11-30 14:58:09  [ main:3266 ] - [ INFO ]  HHH000126: Indexes: [uk_90smlnbwhks9fm00j1uekn05, primary, fk_eir4t7dfi0sq3v82jl857fdde]
+2016-11-30 14:58:09  [ main:3291 ] - [ INFO ]  HHH000261: Table found: yxtchannel.billvippay
+2016-11-30 14:58:09  [ main:3292 ] - [ INFO ]  HHH000037: Columns: [createtime, id, finalprice, realprice, remark, adjustprice, billvip_id, paydate, version]
+2016-11-30 14:58:09  [ main:3292 ] - [ INFO ]  HHH000108: Foreign keys: [fk_gxmalrrlibqtufcsejkkfl8y0]
+2016-11-30 14:58:09  [ main:3292 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_gxmalrrlibqtufcsejkkfl8y0]
+2016-11-30 14:58:09  [ main:3320 ] - [ INFO ]  HHH000261: Table found: yxtchannel.brand
+2016-11-30 14:58:09  [ main:3321 ] - [ INFO ]  HHH000037: Columns: [numsku, series, status, website, imglogo, origin, img, version, contentshort, id, createtime, content, nameen, numsupplier, name]
+2016-11-30 14:58:09  [ main:3321 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3321 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_1cpud2wdulcobtlgkcw1w1hh4]
+2016-11-30 14:58:09  [ main:3336 ] - [ INFO ]  HHH000261: Table found: yxtchannel.cart
+2016-11-30 14:58:09  [ main:3336 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, status, productsku_id, user_id, storage, version]
+2016-11-30 14:58:09  [ main:3336 ] - [ INFO ]  HHH000108: Foreign keys: [fk_94tjs0klq3ti3pbnorndv7ecu, fk_rs971b9fo8ywcurjtliy5be4c]
+2016-11-30 14:58:09  [ main:3336 ] - [ INFO ]  HHH000126: Indexes: [fk_94tjs0klq3ti3pbnorndv7ecu, primary, fk_rs971b9fo8ywcurjtliy5be4c]
+2016-11-30 14:58:09  [ main:3367 ] - [ INFO ]  HHH000261: Table found: yxtchannel.comimg
+2016-11-30 14:58:09  [ main:3367 ] - [ INFO ]  HHH000037: Columns: [createtime, id, fun_id, long_id, img, version]
+2016-11-30 14:58:09  [ main:3367 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3367 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:09  [ main:3383 ] - [ INFO ]  HHH000261: Table found: yxtchannel.comskurelatesort
+2016-11-30 14:58:09  [ main:3383 ] - [ INFO ]  HHH000037: Columns: [createtime, id, fun_id, sku_id, sort_id, version]
+2016-11-30 14:58:09  [ main:3383 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3383 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:09  [ main:3414 ] - [ INFO ]  HHH000261: Table found: yxtchannel.coupon
+2016-11-30 14:58:09  [ main:3414 ] - [ INFO ]  HHH000037: Columns: [createtime, id, module, price, status, remark, ordertotal_id, usetime, user_id, validprice, warehouse, deltime, overtime, version]
+2016-11-30 14:58:09  [ main:3414 ] - [ INFO ]  HHH000108: Foreign keys: [fk_ofp1mpbsm0oq422g8n5m7wio6, fk_rv5xyktph27t7dta016r0cexj]
+2016-11-30 14:58:09  [ main:3414 ] - [ INFO ]  HHH000126: Indexes: [fk_ofp1mpbsm0oq422g8n5m7wio6, primary, fk_rv5xyktph27t7dta016r0cexj]
+2016-11-30 14:58:09  [ main:3445 ] - [ INFO ]  HHH000261: Table found: yxtchannel.couponconfig
+2016-11-30 14:58:09  [ main:3445 ] - [ INFO ]  HHH000037: Columns: [endtime, module, starttime, sharedesc, status, remark, warehouse, sharetitle, version, id, createtime, title, overdays, price, name, validprice, overtime]
+2016-11-30 14:58:09  [ main:3445 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3445 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:09  [ main:3492 ] - [ INFO ]  HHH000261: Table found: yxtchannel.dictionary
+2016-11-30 14:58:09  [ main:3492 ] - [ INFO ]  HHH000037: Columns: [valstr, keyid, createtime, id, vallong, remark, name, valint, valdbl, version]
+2016-11-30 14:58:09  [ main:3492 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3492 ] - [ INFO ]  HHH000126: Indexes: [uk_t54mfo97p6gg8oudayk93o496, primary]
+2016-11-30 14:58:09  [ main:3524 ] - [ INFO ]  HHH000261: Table found: yxtchannel.menu
+2016-11-30 14:58:09  [ main:3524 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, iconname, name, action, parentid, url, version]
+2016-11-30 14:58:09  [ main:3524 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3524 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:09  [ main:3579 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderchild
+2016-11-30 14:58:09  [ main:3580 ] - [ INFO ]  HHH000037: Columns: [weight, storage_id, totalprice, status, ordertotal_id, remarkservice, orderno, remarkrefund, refundtime, taxrecord, rebateprice, version, id, createtime, num, tax, skutotalprice, description, name, freight, logisticsname, logisticsno, sendtime, freightrecord, freeprice, logisticstime]
+2016-11-30 14:58:09  [ main:3580 ] - [ INFO ]  HHH000108: Foreign keys: [fk_5tp6wboy7lytg0nl697pah0be]
+2016-11-30 14:58:09  [ main:3581 ] - [ INFO ]  HHH000126: Indexes: [uk_cdacgr9cvrg6oxmboxukhu3ko, primary, fk_5tp6wboy7lytg0nl697pah0be]
+2016-11-30 14:58:09  [ main:3633 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderexchange
+2016-11-30 14:58:09  [ main:3633 ] - [ INFO ]  HHH000037: Columns: [ordertotal_status, createtime, id, orderprice, price, status, remark, reason, ordertotal_id, pic, version]
+2016-11-30 14:58:09  [ main:3649 ] - [ INFO ]  HHH000108: Foreign keys: [fk_8114ix8pi3d3x3tn9slq2wmpl]
+2016-11-30 14:58:09  [ main:3649 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_8114ix8pi3d3x3tn9slq2wmpl]
+2016-11-30 14:58:09  [ main:3680 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderreturniaction
+2016-11-30 14:58:09  [ main:3680 ] - [ INFO ]  HHH000037: Columns: [usersysname, createtime, id, edittime, username, statusorder, usersys_id, status, orderno, user_id, version]
+2016-11-30 14:58:09  [ main:3680 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:09  [ main:3680 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:3711 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordershop
+2016-11-30 14:58:10  [ main:3711 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, shopid, orderno, logistics, version]
+2016-11-30 14:58:10  [ main:3711 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:3711 ] - [ INFO ]  HHH000126: Indexes: [uk_o14bktlnk5wwmttr4t2q3dmtc, primary]
+2016-11-30 14:58:10  [ main:3758 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordersku
+2016-11-30 14:58:10  [ main:3758 ] - [ INFO ]  HHH000037: Columns: [taxtotal, saleprice, weight, product_id, standard, totalprice, ordertotal_id, img, orderchild_id, code, rebateprice, version, id, createtime, num, tax, freight, productsku_id, freighttotal, productname]
+2016-11-30 14:58:10  [ main:3758 ] - [ INFO ]  HHH000108: Foreign keys: [fk_2oroaslgcswyfsxltsa8p7s48, fk_d9y48ob6frii89bqw28xtjdjg, fk_972k4x7898jwshwhqo4743t8m, fk_1bqd386r0hmpmxuo2aaip3u32]
+2016-11-30 14:58:10  [ main:3758 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_2oroaslgcswyfsxltsa8p7s48, fk_d9y48ob6frii89bqw28xtjdjg, fk_972k4x7898jwshwhqo4743t8m, fk_1bqd386r0hmpmxuo2aaip3u32]
+2016-11-30 14:58:10  [ main:3805 ] - [ INFO ]  HHH000261: Table found: yxtchannel.orderskudetail
+2016-11-30 14:58:10  [ main:3805 ] - [ INFO ]  HHH000037: Columns: [taxtotal, codestorage, saleprice, weight, product_id, standard, totalprice, ordertotal_id, img, orderchild_id, code, version, bodedprice, id, createtime, num, tax, freight, productsku_id, freighttotal, productname]
+2016-11-30 14:58:10  [ main:3805 ] - [ INFO ]  HHH000108: Foreign keys: [fk_m8x0kl3p3vifycur1og285pmq, fk_3me6lmntfd8ki1ehmjf4ew3sq, fk_qno4o7u30e3yvgclqj83xwsya, fk_pdggrrmpvhmpccaprahkj8igv]
+2016-11-30 14:58:10  [ main:3805 ] - [ INFO ]  HHH000126: Indexes: [fk_m8x0kl3p3vifycur1og285pmq, fk_3me6lmntfd8ki1ehmjf4ew3sq, fk_qno4o7u30e3yvgclqj83xwsya, primary, fk_pdggrrmpvhmpccaprahkj8igv]
+2016-11-30 14:58:10  [ main:3852 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertemp
+2016-11-30 14:58:10  [ main:3852 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, num, usersys_id, name, user_id, customername, version]
+2016-11-30 14:58:10  [ main:3852 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:3852 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:3918 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertempsub
+2016-11-30 14:58:10  [ main:3918 ] - [ INFO ]  HHH000037: Columns: [storage_id, remark, consignee, remarkservice, idcard, orderno, ordertemp_id, sku, version, city, id, createtime, shopid, address, province, realname, district, logistics, mobile]
+2016-11-30 14:58:10  [ main:3919 ] - [ INFO ]  HHH000108: Foreign keys: [fk_h8tgdh0j1er73psh9dc2tncyv]
+2016-11-30 14:58:10  [ main:3919 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_h8tgdh0j1er73psh9dc2tncyv, uk_p1xok8sgjvuo1do2r1rf6grl4]
+2016-11-30 14:58:10  [ main:4081 ] - [ INFO ]  HHH000261: Table found: yxtchannel.ordertotal
+2016-11-30 14:58:10  [ main:4081 ] - [ INFO ]  HHH000037: Columns: [weight, remark, coupon_id, consignee, orderno, returntime, tradeno, paytime, rebateprice, city, version, createtime, id, submittime, statusreturn, description, name, province, uservip_id, user_id, sendtime, district, outtime, canceltime, totalprice, status, idcard, payway, remarkrefund, refundprice, refundtime, num, payprice, tax, skutotalprice, address, freight, ordernothird, realname, freeprice, ordersource, mobile]
+2016-11-30 14:58:10  [ main:4081 ] - [ INFO ]  HHH000108: Foreign keys: [fk_kwkl1un7h1b32fh8b1uxqcc30, fk_tgs4hgq4dqap3v1ajyo6j7s09, fk_clipxxgdqatmdc5wf40rjhwmu]
+2016-11-30 14:58:10  [ main:4081 ] - [ INFO ]  HHH000126: Indexes: [fk_kwkl1un7h1b32fh8b1uxqcc30, uk_pvl4bi4ufq8ipkk7a8lidgxj4, primary, fk_tgs4hgq4dqap3v1ajyo6j7s09, fk_clipxxgdqatmdc5wf40rjhwmu, uk_jjb2b0uq7arcjmgf5b96gmr2e]
+2016-11-30 14:58:10  [ main:4138 ] - [ INFO ]  HHH000261: Table found: yxtchannel.product
+2016-11-30 14:58:10  [ main:4138 ] - [ INFO ]  HHH000037: Columns: [combo, salefirstprice, contentshort, version, defaultprice4, createtime, id, edittime, sortindex, stock, sales, name, salesecondprice4, salethirdprice, status, defaultprice, brand_id, origin, salesecondprice, salethirdprice4, nameen, content, pv, seo, salefirstprice4, storage]
+2016-11-30 14:58:10  [ main:4138 ] - [ INFO ]  HHH000108: Foreign keys: [fk_e170op5kedic2jolyiimwqfaj]
+2016-11-30 14:58:10  [ main:4138 ] - [ INFO ]  HHH000126: Indexes: [fk_e170op5kedic2jolyiimwqfaj, primary]
+2016-11-30 14:58:10  [ main:4153 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productattr
+2016-11-30 14:58:10  [ main:4167 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, status, name, parentid, version]
+2016-11-30 14:58:10  [ main:4167 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4167 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4184 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productcombo
+2016-11-30 14:58:10  [ main:4184 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, includesku_id, sku_id, version]
+2016-11-30 14:58:10  [ main:4184 ] - [ INFO ]  HHH000108: Foreign keys: [fk_or9n9u4ovn39lj03qh94ug4ig, fk_mrrdlp4aoeb8168wgdme5ueg4]
+2016-11-30 14:58:10  [ main:4184 ] - [ INFO ]  HHH000126: Indexes: [fk_or9n9u4ovn39lj03qh94ug4ig, primary, fk_mrrdlp4aoeb8168wgdme5ueg4]
+2016-11-30 14:58:10  [ main:4217 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productforuservip
+2016-11-30 14:58:10  [ main:4217 ] - [ INFO ]  HHH000037: Columns: [salesecondprice, code, salethirdprice4, salefirstprice, version, id, createtime, saleiprice4, salesecondprice4, productsku_id, salethirdprice, user_id, salefirstprice4, storage]
+2016-11-30 14:58:10  [ main:4217 ] - [ INFO ]  HHH000108: Foreign keys: [fk_jkfrhfo49aruffyih4sk2v0e1, fk_s38ksitx24vrvrwwmxkkuqb0]
+2016-11-30 14:58:10  [ main:4218 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_jkfrhfo49aruffyih4sk2v0e1, fk_s38ksitx24vrvrwwmxkkuqb0]
+2016-11-30 14:58:10  [ main:4315 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productimg
+2016-11-30 14:58:10  [ main:4315 ] - [ INFO ]  HHH000037: Columns: [img2, createtime, id, product_id, img, img3, version]
+2016-11-30 14:58:10  [ main:4315 ] - [ INFO ]  HHH000108: Foreign keys: [fk_sy6dq3b9t2tgtgebut5q726i8]
+2016-11-30 14:58:10  [ main:4315 ] - [ INFO ]  HHH000126: Indexes: [fk_sy6dq3b9t2tgtgebut5q726i8, primary]
+2016-11-30 14:58:10  [ main:4362 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productindex
+2016-11-30 14:58:10  [ main:4362 ] - [ INFO ]  HHH000037: Columns: [createtime, id, title, product_id, status, url, productname, imgurl, version]
+2016-11-30 14:58:10  [ main:4362 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4362 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4471 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productrelateattr
+2016-11-30 14:58:10  [ main:4471 ] - [ INFO ]  HHH000037: Columns: [attr_id, createtime, id, product_id, version]
+2016-11-30 14:58:10  [ main:4471 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4471 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4503 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productrelatesort
+2016-11-30 14:58:10  [ main:4503 ] - [ INFO ]  HHH000037: Columns: [createtime, id, product_id, sort_id, version]
+2016-11-30 14:58:10  [ main:4503 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4503 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4518 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productsku
+2016-11-30 14:58:10  [ main:4518 ] - [ INFO ]  HHH000037: Columns: [weight, product_id, expirationdate, standardsub, img, combo, salefirstprice, currency, version, defaultprice4, createtime, id, edittime, costprice4, stock, freight4, name, saleiprice4, salesecondprice4, salethirdprice, stockboded, standard, status, cifupprice4, defaultprice, salesecondprice, code, upc, salethirdprice4, cifuphkprice4, sale, unitnum, salefirstprice4, storage]
+2016-11-30 14:58:10  [ main:4518 ] - [ INFO ]  HHH000108: Foreign keys: [fk_mbw1fgumfvdu215yvqad1id2a]
+2016-11-30 14:58:10  [ main:4518 ] - [ INFO ]  HHH000126: Indexes: [uk_93xr7r0x7n4u6uqyqqew4t1t4, fk_mbw1fgumfvdu215yvqad1id2a, uk_gaxlb4mdwib7rdhb9j2l96c11, primary]
+2016-11-30 14:58:10  [ main:4548 ] - [ INFO ]  HHH000261: Table found: yxtchannel.productsort
+2016-11-30 14:58:10  [ main:4548 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, status, name, parentid, version]
+2016-11-30 14:58:10  [ main:4548 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4549 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4565 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchase
+2016-11-30 14:58:10  [ main:4565 ] - [ INFO ]  HHH000037: Columns: [storage_id, approvaltime, remark, ordertime, currency, version, createtime, id, suppliermobile, username, usernamefinish, name, storagerealname, usernameapproval, customername, arrivaltime, numsku, storagemobile, usersys_id, supplier_id, status, totalprice, suppliername, storagename, numskureal, totalrealprice, jsonitemuser, finishtime, num, usernameprice, supplierrealname, numreal, numunit, jsonbrand, purchaseno]
+2016-11-30 14:58:10  [ main:4565 ] - [ INFO ]  HHH000108: Foreign keys: [fk_kys1sn33kac01kv020ig13hvb, fk_taugdjh8uy1j3p9nv8qqennx5, fk_h3sjtsy8l6ja52gb8k87yx82s]
+2016-11-30 14:58:10  [ main:4565 ] - [ INFO ]  HHH000126: Indexes: [fk_kys1sn33kac01kv020ig13hvb, fk_taugdjh8uy1j3p9nv8qqennx5, fk_h3sjtsy8l6ja52gb8k87yx82s, primary, uk_2rkoo548a1mb3xvxts75hwsvm]
+2016-11-30 14:58:10  [ main:4596 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchaseitem
+2016-11-30 14:58:10  [ main:4596 ] - [ INFO ]  HHH000037: Columns: [usersys_id, standard, status, remark, remarkreject, code, upc, version, rejectreason, id, createtime, username, unitnum, num, purchase_id, usetime, numunit, purchaseno, customername, productname]
+2016-11-30 14:58:10  [ main:4596 ] - [ INFO ]  HHH000108: Foreign keys: [fk_40ge15y0x1thoygtq2c734w6c]
+2016-11-30 14:58:10  [ main:4596 ] - [ INFO ]  HHH000126: Indexes: [fk_40ge15y0x1thoygtq2c734w6c, primary]
+2016-11-30 14:58:10  [ main:4631 ] - [ INFO ]  HHH000261: Table found: yxtchannel.purchasesku
+2016-11-30 14:58:10  [ main:4631 ] - [ INFO ]  HHH000037: Columns: [rejecttime, usersys_id, standard, remark, totalprice, status, remarkreject, totalrealprice, code, ordertime, upc, version, id, createtime, exp, unitnum, num, price, purchase_id, name, planarrivaltime, numreal, arrivaltime]
+2016-11-30 14:58:10  [ main:4631 ] - [ INFO ]  HHH000108: Foreign keys: [fk_qr37ixoajy7d3554tfdbu4ukt, fk_6foxcgirs9b1hrwtyropoc8w6]
+2016-11-30 14:58:10  [ main:4632 ] - [ INFO ]  HHH000126: Indexes: [fk_qr37ixoajy7d3554tfdbu4ukt, primary, fk_6foxcgirs9b1hrwtyropoc8w6]
+2016-11-30 14:58:10  [ main:4654 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordaction
+2016-11-30 14:58:10  [ main:4654 ] - [ INFO ]  HHH000037: Columns: [usersysname, module, usersys_id, remark, nickname, orderno, longid, version, ip, id, createtime, content, loginname, title, price, name, user_id]
+2016-11-30 14:58:10  [ main:4654 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:10  [ main:4655 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:10  [ main:4671 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordcoupon
+2016-11-30 14:58:10  [ main:4671 ] - [ INFO ]  HHH000037: Columns: [createtime, id, user_id, couponconfig_id, version]
+2016-11-30 14:58:10  [ main:4671 ] - [ INFO ]  HHH000108: Foreign keys: [fk_hsmwmlwhvr5thnymq6fusquu2, fk_coy9ruvtgx5b5pwg7o7h58yap]
+2016-11-30 14:58:10  [ main:4671 ] - [ INFO ]  HHH000126: Indexes: [fk_hsmwmlwhvr5thnymq6fusquu2, primary, fk_coy9ruvtgx5b5pwg7o7h58yap]
+2016-11-30 14:58:11  [ main:4749 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recorderp
+2016-11-30 14:58:11  [ main:4749 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, username, status, remark, orderno, version]
+2016-11-30 14:58:11  [ main:4749 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:4749 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:4812 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordmanagevisit
+2016-11-30 14:58:11  [ main:4812 ] - [ INFO ]  HHH000037: Columns: [createtime, id, username, usersys_id, name, url, ip, version]
+2016-11-30 14:58:11  [ main:4812 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:4812 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:4843 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordsms
+2016-11-30 14:58:11  [ main:4843 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, authcode, status, err, msg, mobile, ip, version]
+2016-11-30 14:58:11  [ main:4843 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:4843 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:4874 ] - [ INFO ]  HHH000261: Table found: yxtchannel.recordvisit
+2016-11-30 14:58:11  [ main:4874 ] - [ INFO ]  HHH000037: Columns: [os, module, remark, networktype, longid, osversion, version, ip, phonetype, id, createtime, title, browser, month, year, user_id, day, phonebrand]
+2016-11-30 14:58:11  [ main:4874 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:4874 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:4890 ] - [ INFO ]  HHH000261: Table found: yxtchannel.role
+2016-11-30 14:58:11  [ main:4890 ] - [ INFO ]  HHH000037: Columns: [createtime, id, menus, urimail, remark, status, description, uristorage, name, uri, urisupplier, version]
+2016-11-30 14:58:11  [ main:4890 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:4890 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:4921 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selbatch
+2016-11-30 14:58:11  [ main:4921 ] - [ INFO ]  HHH000037: Columns: [createtime, id, usersys_id, remark, name, user_id, selno, version]
+2016-11-30 14:58:11  [ main:4921 ] - [ INFO ]  HHH000108: Foreign keys: [fk_efbjqwigb0c3gegwdxq3bfgf9, fk_dulot7nr2g04q5rq9c36ebib6]
+2016-11-30 14:58:11  [ main:4921 ] - [ INFO ]  HHH000126: Indexes: [fk_efbjqwigb0c3gegwdxq3bfgf9, fk_dulot7nr2g04q5rq9c36ebib6, uk_o8u4b0qnbn4hjy979bq509tbg, primary]
+2016-11-30 14:58:11  [ main:4961 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selbatchsku
+2016-11-30 14:58:11  [ main:4961 ] - [ INFO ]  HHH000037: Columns: [createtime, id, saleprice, standard, selbatch_id, remark, sales, name, saletime, version]
+2016-11-30 14:58:11  [ main:4961 ] - [ INFO ]  HHH000108: Foreign keys: [fk_4iqqe9rt9odlxvjobwwbhil3g]
+2016-11-30 14:58:11  [ main:4961 ] - [ INFO ]  HHH000126: Indexes: [fk_4iqqe9rt9odlxvjobwwbhil3g, primary]
+2016-11-30 14:58:11  [ main:4993 ] - [ INFO ]  HHH000261: Table found: yxtchannel.selsku
+2016-11-30 14:58:11  [ main:4993 ] - [ INFO ]  HHH000037: Columns: [factoryprice, saleprice, product_id, standard, website, status, brand_id, code, salemaxprice, version, id, createtime, applyage, name, codetemp]
+2016-11-30 14:58:11  [ main:4993 ] - [ INFO ]  HHH000108: Foreign keys: [fk_977ycjuywxx7knuqk8mrvwu8s]
+2016-11-30 14:58:11  [ main:4993 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_86lw0x9u4hajo6uatfmtmwlvc, fk_977ycjuywxx7knuqk8mrvwu8s]
+2016-11-30 14:58:11  [ main:5039 ] - [ INFO ]  HHH000261: Table found: yxtchannel.sendmail
+2016-11-30 14:58:11  [ main:5039 ] - [ INFO ]  HHH000037: Columns: [content, createtime, id, username, title, status, mailaddr, sendtime, errmsg, numtry, version]
+2016-11-30 14:58:11  [ main:5039 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5039 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5071 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statorder
+2016-11-30 14:58:11  [ main:5071 ] - [ INFO ]  HHH000037: Columns: [numboded, salesamerica, payamerica, refundamerica, version, id, createtime, edittime, num, salesboded, numamerica, sales, refund, month, refundboded, pay, payboded, year, day]
+2016-11-30 14:58:11  [ main:5071 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5071 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5102 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statorderi
+2016-11-30 14:58:11  [ main:5102 ] - [ INFO ]  HHH000037: Columns: [version, id, createtime, edittime, num, time, refund, sales, month, pay, year, user_id, uservip_id, day]
+2016-11-30 14:58:11  [ main:5102 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5102 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5118 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statsales
+2016-11-30 14:58:11  [ main:5118 ] - [ INFO ]  HHH000037: Columns: [totalpriceboded, numboded, standard, totalprice, standardsub, code, version, id, createtime, edittime, num, month, year, day, productname]
+2016-11-30 14:58:11  [ main:5118 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5118 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5149 ] - [ INFO ]  HHH000261: Table found: yxtchannel.statvisit
+2016-11-30 14:58:11  [ main:5149 ] - [ INFO ]  HHH000037: Columns: [module, remark, longid, version, id, createtime, addtime, title, uv, month, year, pv, day]
+2016-11-30 14:58:11  [ main:5149 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5149 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5194 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storage
+2016-11-30 14:58:11  [ main:5194 ] - [ INFO ]  HHH000037: Columns: [createtime, id, numsku, orderstatus, numbrand, numsupplier, name, freighttmpl, realname, taxtmpl, mobile, version]
+2016-11-30 14:58:11  [ main:5194 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5195 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5283 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageallotstock
+2016-11-30 14:58:11  [ main:5283 ] - [ INFO ]  HHH000037: Columns: [usernamereject, approvaltime, remark, plantime, version, createtime, id, username, usernamefinish, storageoutrealname, name, storageinrealname, intime, storagein_id, allotno, outtime, storageinname, numsku, approvalouttime, usersys_id, rejecttime, status, remarkreject, usernameapprovalin, storageinmobile, handletime, finishtime, num, usernameapprovalout, storageout_id, storageoutmobile, approvalintime, numreal, storageoutname]
+2016-11-30 14:58:11  [ main:5283 ] - [ INFO ]  HHH000108: Foreign keys: [fk_rw7s634c4kbcvq8tnyy78pr36, fk_o3o10yom20ctsnuydcnxcfyc0, fk_71vmqfdk50pthygv3n2xg9xh4]
+2016-11-30 14:58:11  [ main:5283 ] - [ INFO ]  HHH000126: Indexes: [uk_870wxm8biac47nve8pg83083, primary, fk_rw7s634c4kbcvq8tnyy78pr36, fk_o3o10yom20ctsnuydcnxcfyc0, fk_71vmqfdk50pthygv3n2xg9xh4]
+2016-11-30 14:58:11  [ main:5314 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageallotstocksku
+2016-11-30 14:58:11  [ main:5314 ] - [ INFO ]  HHH000037: Columns: [usersys_id, standard, remark, code, upc, version, storageallotstock_id, id, createtime, num, stock, name, numreal]
+2016-11-30 14:58:11  [ main:5314 ] - [ INFO ]  HHH000108: Foreign keys: [fk_7g2weywo29dfk5dbokl02kgro, fk_sigrsl5s5ixluy9db57nkwwmu]
+2016-11-30 14:58:11  [ main:5314 ] - [ INFO ]  HHH000126: Indexes: [fk_7g2weywo29dfk5dbokl02kgro, primary, fk_sigrsl5s5ixluy9db57nkwwmu]
+2016-11-30 14:58:11  [ main:5330 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageinoutstock
+2016-11-30 14:58:11  [ main:5330 ] - [ INFO ]  HHH000037: Columns: [usernamereject, storage_id, belong, approvaltime, remark, customer, version, createtime, id, username, usernamefinish, name, storagerealname, usernameapproval, numsku, storagemobile, usersys_id, rejecttime, status, remarkreject, inoutstockno, storagename, handletime, finishtime, num, address]
+2016-11-30 14:58:11  [ main:5330 ] - [ INFO ]  HHH000108: Foreign keys: [fk_rqm1fyocrxxkddvyt9wf8orvr, fk_1wk53jdkas38x2k2pp6kp72dm]
+2016-11-30 14:58:11  [ main:5330 ] - [ INFO ]  HHH000126: Indexes: [fk_rqm1fyocrxxkddvyt9wf8orvr, fk_1wk53jdkas38x2k2pp6kp72dm, uk_cd11djipunrp8a3ya5e8hxpue, primary]
+2016-11-30 14:58:11  [ main:5377 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storageinoutstocksku
+2016-11-30 14:58:11  [ main:5377 ] - [ INFO ]  HHH000037: Columns: [createtime, id, num, usersys_id, stock, standard, name, storageinoutstock_id, code, upc, version]
+2016-11-30 14:58:11  [ main:5377 ] - [ INFO ]  HHH000108: Foreign keys: [fk_e0oxp5irnstvuq09xm3orj9ug, fk_7lc7xdlh075x5llx38lad0fsi]
+2016-11-30 14:58:11  [ main:5377 ] - [ INFO ]  HHH000126: Indexes: [fk_e0oxp5irnstvuq09xm3orj9ug, fk_7lc7xdlh075x5llx38lad0fsi, primary]
+2016-11-30 14:58:11  [ main:5392 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storagerecordstock
+2016-11-30 14:58:11  [ main:5392 ] - [ INFO ]  HHH000037: Columns: [inouttime, storage_id, belong, standard, belong_id, belongno, storagename, code, version, id, createtime, num, stock, name]
+2016-11-30 14:58:11  [ main:5392 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5392 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5424 ] - [ INFO ]  HHH000261: Table found: yxtchannel.storagesku
+2016-11-30 14:58:11  [ main:5424 ] - [ INFO ]  HHH000037: Columns: [codestorage, storage_id, standard, status, brand_id, code, upc, version, bodedprice, id, createtime, stock, name, productsku_id]
+2016-11-30 14:58:11  [ main:5424 ] - [ INFO ]  HHH000108: Foreign keys: [fk_sfe3qnn06p5q2ht5ie2821avi, fk_97ttgrb8aq5yg17y69f4q9vlx, fk_jt6yw8h0okhl8pxa0jyhi7brn]
+2016-11-30 14:58:11  [ main:5424 ] - [ INFO ]  HHH000126: Indexes: [fk_sfe3qnn06p5q2ht5ie2821avi, fk_97ttgrb8aq5yg17y69f4q9vlx, fk_jt6yw8h0okhl8pxa0jyhi7brn, primary]
+2016-11-30 14:58:11  [ main:5439 ] - [ INFO ]  HHH000261: Table found: yxtchannel.supplier
+2016-11-30 14:58:11  [ main:5439 ] - [ INFO ]  HHH000037: Columns: [createtime, id, numsku, numbrand, address, name, realname, mobile, version]
+2016-11-30 14:58:11  [ main:5439 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5439 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:11  [ main:5502 ] - [ INFO ]  HHH000261: Table found: yxtchannel.suppliersku
+2016-11-30 14:58:11  [ main:5502 ] - [ INFO ]  HHH000037: Columns: [createtime, id, supplier_id, standard, name, brand_id, productsku_id, code, ups, upc, version]
+2016-11-30 14:58:11  [ main:5502 ] - [ INFO ]  HHH000108: Foreign keys: [fk_1nnspkn4iyns0gr7cc7ua3682, fk_mq0emtigxihqmtc4o1bcaqjkq, fk_39xx4opymtur4lqy9031mmxm4]
+2016-11-30 14:58:11  [ main:5502 ] - [ INFO ]  HHH000126: Indexes: [fk_1nnspkn4iyns0gr7cc7ua3682, fk_mq0emtigxihqmtc4o1bcaqjkq, primary, fk_39xx4opymtur4lqy9031mmxm4]
+2016-11-30 14:58:11  [ main:5548 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductbrand
+2016-11-30 14:58:11  [ main:5548 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:58:11  [ main:5548 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5548 ] - [ INFO ]  HHH000126: Indexes: [primary, name_unique]
+2016-11-30 14:58:11  [ main:5611 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductcompany
+2016-11-30 14:58:11  [ main:5611 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:58:11  [ main:5611 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5611 ] - [ INFO ]  HHH000126: Indexes: [primary, name_unique]
+2016-11-30 14:58:11  [ main:5658 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductsale
+2016-11-30 14:58:11  [ main:5658 ] - [ INFO ]  HHH000037: Columns: [endtime, gift, saleprice, starttime, sort, belong, standard, remark, thirdproductcompany_id, agestart, url, version, salesstart, id, createtime, payprice, salesrecord, ageend, sales, name, sort_id, thirdproductbrand_id, soldout]
+2016-11-30 14:58:11  [ main:5658 ] - [ INFO ]  HHH000108: Foreign keys: [fk_s85ci2hbb4flhi135ikkvbbu1, fk_1jxgc4xgrxjdskr798nttw3mc]
+2016-11-30 14:58:11  [ main:5658 ] - [ INFO ]  HHH000126: Indexes: [primary, fk_s85ci2hbb4flhi135ikkvbbu1, fk_1jxgc4xgrxjdskr798nttw3mc]
+2016-11-30 14:58:11  [ main:5678 ] - [ INFO ]  HHH000261: Table found: yxtchannel.thirdproductsort
+2016-11-30 14:58:11  [ main:5678 ] - [ INFO ]  HHH000037: Columns: [createtime, id, name, version]
+2016-11-30 14:58:11  [ main:5679 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:11  [ main:5679 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:12  [ main:5719 ] - [ INFO ]  HHH000261: Table found: yxtchannel.uri
+2016-11-30 14:58:12  [ main:5719 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, remark, name, action, parentid, url, version]
+2016-11-30 14:58:12  [ main:5719 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:12  [ main:5720 ] - [ INFO ]  HHH000126: Indexes: [uk_5r0dw5fjs00jdbjdbydy1aryd, primary]
+2016-11-30 14:58:12  [ main:5739 ] - [ INFO ]  HHH000261: Table found: yxtchannel.urimail
+2016-11-30 14:58:12  [ main:5740 ] - [ INFO ]  HHH000037: Columns: [createtime, id, sortindex, remark, name, action, version]
+2016-11-30 14:58:12  [ main:5740 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:12  [ main:5740 ] - [ INFO ]  HHH000126: Indexes: [primary, uk_2gyypsy28l781887wdmm9y77w]
+2016-11-30 14:58:12  [ main:5788 ] - [ INFO ]  HHH000261: Table found: yxtchannel.user
+2016-11-30 14:58:12  [ main:5788 ] - [ INFO ]  HHH000037: Columns: [birthday, sex, weight, couponnum, street, numorder, password, refreshinfotime, imghead, city, version, createtime, id, loginname, lastlogintime, orgname, province, openid, district, qq, numsku, totalprice, status, nickname, idcard, usertype, refundprice, country, imgheadwx, payprice, email, realname, freeprice, mobile]
+2016-11-30 14:58:12  [ main:5788 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:12  [ main:5788 ] - [ INFO ]  HHH000126: Indexes: [uk_6ondlsvpclf2syh8i4g9aujjv, uk_5l3g9ud1bksoc7tfcn2wg4cbt, uk_2i4ni4xn4lgj8ljytfle585je, primary, uk_5mdt50kkc2eq7sfklqmrdnh4d, uk_5iebj9qwxsnoshbaq6w834t0y, uk_e6gkqunxajvyxl5uctpl2vl2p]
+2016-11-30 14:58:12  [ main:5910 ] - [ INFO ]  HHH000261: Table found: yxtchannel.usersys
+2016-11-30 14:58:12  [ main:5911 ] - [ INFO ]  HHH000037: Columns: [menus, urimail, role_id, status, rolepurchase, rolesupplier, uri, password, version, id, createtime, loginname, lastlogintime, email, uristorage, name, urisupplier]
+2016-11-30 14:58:12  [ main:5911 ] - [ INFO ]  HHH000108: Foreign keys: [fk_4gxypcjr8qauyuytlo269xng6]
+2016-11-30 14:58:12  [ main:5911 ] - [ INFO ]  HHH000126: Indexes: [fk_4gxypcjr8qauyuytlo269xng6, uk_lry14mhj1hdqnhlo7g7217i6q, primary]
+2016-11-30 14:58:12  [ main:6017 ] - [ INFO ]  HHH000261: Table found: yxtchannel.uservip
+2016-11-30 14:58:12  [ main:6018 ] - [ INFO ]  HHH000037: Columns: [authtype, sex, imgidcard, website, status, remark, imgstore, idcard, imgcharter, version, city, keyid, id, createtime, imgidcardbak, jobtype, address, name, province, user_id, realname, district, mobile]
+2016-11-30 14:58:12  [ main:6018 ] - [ INFO ]  HHH000108: Foreign keys: [fk_5vnl3y91csbhtn4othvk5nip]
+2016-11-30 14:58:12  [ main:6018 ] - [ INFO ]  HHH000126: Indexes: [fk_5vnl3y91csbhtn4othvk5nip, uk_i811jnsf94kuexyqjxkkjkwt0, uk_skxer4x7ldeclinrf4nq9q487, primary]
+2016-11-30 14:58:12  [ main:6051 ] - [ INFO ]  HHH000261: Table found: yxtchannel.visitagent
+2016-11-30 14:58:12  [ main:6051 ] - [ INFO ]  HHH000037: Columns: [createtime, id, info, version]
+2016-11-30 14:58:12  [ main:6051 ] - [ INFO ]  HHH000108: Foreign keys: []
+2016-11-30 14:58:12  [ main:6052 ] - [ INFO ]  HHH000126: Indexes: [primary]
+2016-11-30 14:58:12  [ main:6055 ] - [ INFO ]  HHH000232: Schema update complete
+2016-11-30 14:58:13  [ main:7070 ] - [ INFO ]  Starting: DwrController v3.0.0-FINAL on MockServletContext / JDK 1.7.0_51 from Oracle Corporation at 
+2016-11-30 14:58:13  [ main:7263 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+2016-11-30 14:58:13  [ main:7275 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@131c8e88]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:134)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrSrvice': Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1583)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076)
+	at org.directwebremoting.spring.DwrHandlerMapping.initApplicationContext(DwrHandlerMapping.java:49)
+	at org.springframework.context.support.ApplicationObjectSupport.initApplicationContext(ApplicationObjectSupport.java:120)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:76)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:74)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:121)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:97)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	... 39 more
+Caused by: java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiveMajorVersion()I
+	at org.directwebremoting.server.servlet3.Servlet30ContainerAbstraction.isNativeEnvironment(Servlet30ContainerAbstraction.java:45)
+	at org.directwebremoting.impl.StartupUtil.resolveMultipleImplementations(StartupUtil.java:376)
+	at org.directwebremoting.impl.StartupUtil.setupDefaultContainer(StartupUtil.java:262)
+	at org.directwebremoting.spring.DwrController.afterPropertiesSet(DwrController.java:191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
+	... 55 more
+2016-11-30 14:59:09  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 14:59:09  [ main:16 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1cd302d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@615e796d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176150c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6f5fc793, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7927bd04]
+2016-11-30 14:59:09  [ main:187 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 14:59:09 CST 2016]; root of context hierarchy
+2016-11-30 14:59:09  [ main:362 ] - [ INFO ]  : init
+2016-11-30 14:59:09  [ main:366 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 14:59:09  [ main:367 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 14:59:10  [ main:632 ] - [ INFO ]  FrameworkServlet '': initialization completed in 265 ms
+2016-11-30 14:59:10  [ main:658 ] - [ WARN ]  No mapping found for HTTP request with URI [/web/user/login] in DispatcherServlet with name ''
+2016-11-30 14:59:10  [ Thread-0:674 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 14:59:09 CST 2016]; root of context hierarchy
+2016-11-30 15:01:09  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:01:09  [ main:15 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1cd302d3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@615e796d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@176150c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f5fc793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7927bd04, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1fea8fc0]
+2016-11-30 15:01:09  [ main:187 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7986f141: startup date [Wed Nov 30 15:01:09 CST 2016]; root of context hierarchy
+2016-11-30 15:01:09  [ main:359 ] - [ INFO ]  : init
+2016-11-30 15:01:09  [ main:359 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:01:09  [ main:359 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:01:10  [ main:636 ] - [ INFO ]  FrameworkServlet '': initialization completed in 277 ms
+2016-11-30 15:01:10  [ main:663 ] - [ WARN ]  No mapping found for HTTP request with URI [/web/user/login] in DispatcherServlet with name ''
+2016-11-30 15:01:10  [ Thread-0:674 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@7986f141: startup date [Wed Nov 30 15:01:09 CST 2016]; root of context hierarchy
+2016-11-30 15:01:40  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:01:41  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1cd302d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@615e796d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176150c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6f5fc793, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7927bd04]
+2016-11-30 15:01:41  [ main:165 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 15:01:41 CST 2016]; root of context hierarchy
+2016-11-30 15:01:41  [ main:338 ] - [ INFO ]  : init
+2016-11-30 15:01:41  [ main:338 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:01:41  [ main:338 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:01:41  [ main:604 ] - [ INFO ]  FrameworkServlet '': initialization completed in 266 ms
+2016-11-30 15:01:41  [ main:628 ] - [ WARN ]  No mapping found for HTTP request with URI [/web/user/login] in DispatcherServlet with name ''
+2016-11-30 15:01:41  [ Thread-0:644 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 15:01:41 CST 2016]; root of context hierarchy
+2016-11-30 15:03:50  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:03:50  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1cd302d3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@615e796d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@176150c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6f5fc793, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7927bd04]
+2016-11-30 15:03:50  [ main:188 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 15:03:50 CST 2016]; root of context hierarchy
+2016-11-30 15:03:50  [ main:375 ] - [ INFO ]  : init
+2016-11-30 15:03:50  [ main:391 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:03:50  [ main:391 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:03:51  [ main:662 ] - [ INFO ]  FrameworkServlet '': initialization completed in 271 ms
+2016-11-30 15:03:51  [ main:689 ] - [ WARN ]  No mapping found for HTTP request with URI [/manage/doLogin] in DispatcherServlet with name ''
+2016-11-30 15:03:51  [ Thread-0:705 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@59b30ac0: startup date [Wed Nov 30 15:03:50 CST 2016]; root of context hierarchy
+2016-11-30 15:20:29  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:20:29  [ main:16 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1cd302d3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@615e796d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@176150c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6f5fc793, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7927bd04, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1fea8fc0]
+2016-11-30 15:20:29  [ main:187 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7986f141: startup date [Wed Nov 30 15:20:29 CST 2016]; root of context hierarchy
+2016-11-30 15:20:29  [ main:344 ] - [ INFO ]  : init
+2016-11-30 15:20:29  [ main:344 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:20:29  [ main:344 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:20:30  [ main:609 ] - [ INFO ]  FrameworkServlet '': initialization completed in 265 ms
+2016-11-30 15:20:30  [ main:652 ] - [ WARN ]  No mapping found for HTTP request with URI [/manage/doLogin] in DispatcherServlet with name ''
+2016-11-30 15:20:30  [ Thread-0:652 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@7986f141: startup date [Wed Nov 30 15:20:29 CST 2016]; root of context hierarchy
+2016-11-30 15:28:35  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:28:35  [ main:15 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@16a51ac9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@31818dbc, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@30804b08, org.springframework.test.context.support.DirtiesContextTestExecutionListener@36be1318, org.springframework.test.context.transaction.TransactionalTestExecutionListener@78d7a8bb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1686caf8]
+2016-11-30 15:28:35  [ main:199 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3eb6bc23: startup date [Wed Nov 30 15:28:35 CST 2016]; root of context hierarchy
+2016-11-30 15:28:35  [ main:331 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@30804b08] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@5b21409a]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.hq.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1463)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1094)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	... 28 more
+2016-11-30 15:28:35  [ Thread-0:346 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@3eb6bc23: startup date [Wed Nov 30 15:28:35 CST 2016]; root of context hierarchy
+2016-11-30 15:42:16  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:42:16  [ main:25 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@29d896d6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4a96d110, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@737797b1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@308820b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@391a1bb4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6110e3b5]
+2016-11-30 15:42:16  [ main:194 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@36726b5b: startup date [Wed Nov 30 15:42:16 CST 2016]; root of context hierarchy
+2016-11-30 15:42:17  [ main:340 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@737797b1] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@5746e7cc]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.hq.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:385)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1463)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1094)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	... 28 more
+2016-11-30 15:42:17  [ Thread-0:350 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@36726b5b: startup date [Wed Nov 30 15:42:16 CST 2016]; root of context hierarchy
+2016-11-30 15:42:35  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:42:35  [ main:26 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6a905eb5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2c39f3bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@10b090ac, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37ea14c3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@68f92ae2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3e6e9145]
+2016-11-30 15:42:35  [ main:189 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@38dbe3d3: startup date [Wed Nov 30 15:42:35 CST 2016]; root of context hierarchy
+2016-11-30 15:42:35  [ main:375 ] - [ INFO ]  : init
+2016-11-30 15:42:35  [ main:378 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:42:35  [ main:378 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:42:36  [ main:649 ] - [ INFO ]  FrameworkServlet '': initialization completed in 270 ms
+2016-11-30 15:42:36  [ main:678 ] - [ WARN ]  No mapping found for HTTP request with URI [/manage/doLogin] in DispatcherServlet with name ''
+2016-11-30 15:42:36  [ Thread-0:687 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@38dbe3d3: startup date [Wed Nov 30 15:42:35 CST 2016]; root of context hierarchy
+2016-11-30 15:43:43  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-30 15:43:43  [ main:24 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2cf48a01, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6a905eb5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2c39f3bb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@10b090ac, org.springframework.test.context.transaction.TransactionalTestExecutionListener@37ea14c3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68f92ae2]
+2016-11-30 15:43:43  [ main:223 ] - [ INFO ]  Refreshing org.springframework.web.context.support.GenericWebApplicationContext@af66eac: startup date [Wed Nov 30 15:43:43 CST 2016]; root of context hierarchy
+2016-11-30 15:43:43  [ main:418 ] - [ INFO ]  : init
+2016-11-30 15:43:43  [ main:422 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:43:43  [ main:422 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:43:44  [ main:709 ] - [ INFO ]  FrameworkServlet '': initialization completed in 286 ms
+2016-11-30 15:43:44  [ main:746 ] - [ WARN ]  No mapping found for HTTP request with URI [/manage/doLogin] in DispatcherServlet with name ''
+2016-11-30 15:43:44  [ Thread-0:758 ] - [ INFO ]  Closing org.springframework.web.context.support.GenericWebApplicationContext@af66eac: startup date [Wed Nov 30 15:43:43 CST 2016]; root of context hierarchy
+2016-11-30 15:52:52  [ main:0 ] - [ INFO ]  Mapped "{[/web/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 15:52:52  [ main:4 ] - [ INFO ]  Mapped "{[/web/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:52:52  [ main:4 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:52:52  [ main:5 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 15:52:52  [ main:5 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:52:52  [ main:6 ] - [ INFO ]  Mapped "{[/web/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:52:53  [ main:329 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@131b4c5d
+2016-11-30 15:52:53  [ main:415 ] - [ INFO ]  : init
+2016-11-30 15:52:53  [ main:437 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:52:53  [ main:437 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:52:53  [ main:442 ] - [ INFO ]  FrameworkServlet '': initialization completed in 4 ms
+2016-11-30 15:52:53  [ main:481 ] - [ WARN ]  No mapping found for HTTP request with URI [/user/login] in DispatcherServlet with name ''
+2016-11-30 15:53:01  [ main:0 ] - [ INFO ]  Mapped "{[/web/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 15:53:01  [ main:5 ] - [ INFO ]  Mapped "{[/web/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:53:01  [ main:5 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:53:01  [ main:6 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:53:01  [ main:7 ] - [ INFO ]  Mapped "{[/web/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 15:53:01  [ main:8 ] - [ INFO ]  Mapped "{[/web/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:53:02  [ main:347 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@65327777
+2016-11-30 15:53:02  [ main:432 ] - [ INFO ]  : init
+2016-11-30 15:53:02  [ main:452 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:53:02  [ main:452 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:53:02  [ main:457 ] - [ INFO ]  FrameworkServlet '': initialization completed in 4 ms
+2016-11-30 15:56:44  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 15:56:44  [ main:9 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:56:44  [ main:10 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:56:44  [ main:10 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 15:56:44  [ main:11 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 15:56:44  [ main:13 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 15:56:45  [ main:337 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@131b4c5d
+2016-11-30 15:56:45  [ main:426 ] - [ INFO ]  : init
+2016-11-30 15:56:45  [ main:447 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 15:56:45  [ main:447 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 15:56:45  [ main:451 ] - [ INFO ]  FrameworkServlet '': initialization completed in 4 ms
+2016-11-30 16:06:29  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:06:29  [ main:15 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:06:29  [ main:15 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:06:29  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:06:29  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:06:29  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:06:29  [ main:340 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@131b4c5d
+2016-11-30 16:06:29  [ main:425 ] - [ INFO ]  : init
+2016-11-30 16:06:29  [ main:441 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:06:29  [ main:441 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:06:29  [ main:441 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:06:29  [ main:488 ] - [ WARN ]  No mapping found for HTTP request with URI [/simple] in DispatcherServlet with name ''
+2016-11-30 16:06:38  [ main:0 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@1be514e4
+2016-11-30 16:06:38  [ main:94 ] - [ INFO ]  : init
+2016-11-30 16:06:38  [ main:110 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:06:38  [ main:123 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:06:38  [ main:124 ] - [ INFO ]  FrameworkServlet '': initialization completed in 1 ms
+2016-11-30 16:06:38  [ main:171 ] - [ WARN ]  No mapping found for HTTP request with URI [/simple] in DispatcherServlet with name ''
+2016-11-30 16:07:17  [ main:0 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@1be514e4
+2016-11-30 16:07:18  [ main:94 ] - [ INFO ]  : init
+2016-11-30 16:07:18  [ main:116 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:07:18  [ main:116 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:07:18  [ main:116 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:07:18  [ main:195 ] - [ WARN ]  No mapping found for HTTP request with URI [/simple] in DispatcherServlet with name ''
+2016-11-30 16:07:51  [ main:0 ] - [ INFO ]  Mapped "{[/simple]}" onto public java.lang.String com.hq.yxt.channel.controller.SimpleController.simple()
+2016-11-30 16:07:51  [ main:328 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@15ea9246
+2016-11-30 16:07:51  [ main:437 ] - [ INFO ]  : init
+2016-11-30 16:07:51  [ main:462 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:07:51  [ main:462 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:07:51  [ main:462 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:08:30  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:08:30  [ main:15 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:08:30  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:08:30  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:08:30  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:08:30  [ main:15 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:08:30  [ main:328 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@232023ff
+2016-11-30 16:08:30  [ main:421 ] - [ INFO ]  : init
+2016-11-30 16:08:30  [ main:441 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:08:30  [ main:441 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:08:30  [ main:441 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:08:44  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:08:44  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:08:44  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:08:44  [ main:16 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:08:44  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:08:44  [ main:16 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:08:44  [ main:344 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@7031086c
+2016-11-30 16:08:44  [ main:422 ] - [ INFO ]  : init
+2016-11-30 16:08:44  [ main:447 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:08:44  [ main:447 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:08:44  [ main:447 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:10:00  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:10:00  [ main:16 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:00  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:10:00  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:00  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:00  [ main:16 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:00  [ main:344 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@136e2ea3
+2016-11-30 16:10:00  [ main:426 ] - [ INFO ]  : init
+2016-11-30 16:10:00  [ main:442 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:10:00  [ main:442 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:10:00  [ main:457 ] - [ INFO ]  FrameworkServlet '': initialization completed in 15 ms
+2016-11-30 16:10:21  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:10:21  [ main:16 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:21  [ main:16 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:21  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:21  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:10:21  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:21  [ main:360 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@3e0a1e1f
+2016-11-30 16:10:21  [ main:445 ] - [ INFO ]  : init
+2016-11-30 16:10:21  [ main:476 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:10:21  [ main:476 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:10:21  [ main:476 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:10:31  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:10:31  [ main:16 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:31  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:31  [ main:16 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:31  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:10:31  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:32  [ main:344 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@2934847
+2016-11-30 16:10:32  [ main:422 ] - [ INFO ]  : init
+2016-11-30 16:10:32  [ main:432 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:10:32  [ main:432 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:10:32  [ main:448 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:10:46  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:10:46  [ main:16 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:46  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:46  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:10:46  [ main:16 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:10:46  [ main:16 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:10:47  [ main:344 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@131b4c5d
+2016-11-30 16:10:47  [ main:429 ] - [ INFO ]  : init
+2016-11-30 16:10:47  [ main:445 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:10:47  [ main:445 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:10:47  [ main:445 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:11:15  [ main:0 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:11:15  [ main:359 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@57e603e6
+2016-11-30 16:11:15  [ main:451 ] - [ INFO ]  : init
+2016-11-30 16:11:15  [ main:467 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:11:15  [ main:467 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:11:15  [ main:482 ] - [ INFO ]  FrameworkServlet '': initialization completed in 15 ms
+2016-11-30 16:11:38  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:11:38  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:11:38  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:11:38  [ main:15 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:11:38  [ main:15 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:11:38  [ main:15 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:11:38  [ main:343 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@76959acc
+2016-11-30 16:11:38  [ main:427 ] - [ INFO ]  : init
+2016-11-30 16:11:38  [ main:458 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:11:38  [ main:458 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:11:38  [ main:458 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/user],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.register(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[DELETE]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginOut(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.loginCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/sendSms]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.sendSms(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/user/login],methods=[POST]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-11-30 16:12:18  [ main:0 ] - [ INFO ]  Mapped "{[/user/mobile],methods=[GET]}" onto public com.hq.web.domain.JsonResponse com.hq.yxt.channel.controller.UserController.userMobileCheck(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse,java.lang.String)
+2016-11-30 16:12:18  [ main:328 ] - [ INFO ]  Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@232023ff
+2016-11-30 16:12:18  [ main:423 ] - [ INFO ]  : init
+2016-11-30 16:12:18  [ main:438 ] - [ INFO ]  Initializing Spring FrameworkServlet ''
+2016-11-30 16:12:18  [ main:438 ] - [ INFO ]  FrameworkServlet '': initialization started
+2016-11-30 16:12:18  [ main:438 ] - [ INFO ]  FrameworkServlet '': initialization completed in 0 ms
