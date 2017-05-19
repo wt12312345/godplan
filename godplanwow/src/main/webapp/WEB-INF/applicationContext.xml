@@ -20,16 +20,16 @@
 	<context:component-scan base-package="com.wt.dao" />
 	<context:component-scan base-package="com.wt.dao.*" />
 
-	<context:component-scan base-package="com.wt.manage.service" />
-	<context:component-scan base-package="com.wt.manage.service.*" />
-	<context:component-scan base-package="com.wt.manage.dao" />
-	<context:component-scan base-package="com.wt.manage.dao.*" />
-	<context:component-scan base-package="com.wt.manager" />
-	<context:component-scan base-package="com.wt.manager.*" />
-	<context:component-scan base-package="com.wt.manage.manager" />
-	<context:component-scan base-package="com.wt.manage.manager.*" />
+	<context:component-scan base-package="com.godplan.m.service" />
+	<context:component-scan base-package="com.godplan.m.service.*" />
+	<context:component-scan base-package="com.godplan.m.dao" />
+	<context:component-scan base-package="com.godplan.m.dao.*" />
+	<context:component-scan base-package="com.godplan.mr" />
+	<context:component-scan base-package="com.godplan.mr.*" />
+	<context:component-scan base-package="com.godplan.m.manager" />
+	<context:component-scan base-package="com.godplan.m.manager.*" />
 
-	<context:component-scan base-package="com.wt.manage.quartz" />
+	<context:component-scan base-package="com.godplan.m.quartz" />
 
 	<!-- 启用 annotation 配置模式 -->
 	<dwr:configuration></dwr:configuration>

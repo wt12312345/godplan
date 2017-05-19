@@ -20,7 +20,7 @@
 	<mvc:resources location="/assets/plugin/" mapping="/assets/plugin/**" />
 	<mvc:resources location="/favicon.ico" mapping="/favicon.ico" />
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<context:component-scan base-package="com.wt.manage.controller" />
+	<context:component-scan base-package="com.godplan.m.controller" />
 	<!-- 解决了@Controller注解的使用前提配置。 -->
 	<!-- <mvc:annotation-driven> <mvc:message-converters register-defaults="false"> 
 		<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" 
@@ -63,7 +63,7 @@
 			<mvc:mapping path="/m/*/*/*/*" />
 			<mvc:exclude-mapping path="/m/userSyses/login" />
 
-			<bean class="com.wt.manage.interceptor.UserSysInterceptor">
+			<bean class="com.godplan.web.interceptor.UserInterceptor">
 			</bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
