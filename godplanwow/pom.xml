@@ -5,7 +5,7 @@
 	<artifactId>godplanwow</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>godplan</name>
+	<name>godplanwow</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -187,6 +187,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>godplan</finalName>
+		<finalName>godplanwow</finalName>
 	</build>
 </project>
