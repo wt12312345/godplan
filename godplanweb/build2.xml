@@ -1,0 +1,57 @@
+<!-- <project name="hqManageApi" default="redeploy" basedir="."> -->
+<project name="hqWow" default="redeploy" basedir="C:/workspace/apache-tomcat-7.0.50/webapps/ROOT">
+	<!-- Configure the directory into which the web application is built -->
+	<property name="build" value="${basedir}/WEB-INF/classes" />
+	<property name="dist.dir" value="C:/workspace/ant" />
+
+	<!-- Configure the context path for this application -->
+	<property name="path" value="/" />
+
+	<!-- Configure properties to access the Manager application -->
+	<property name="url" value="http://192.168.1.66:8082/manager/text" />
+	<property name="username" value="tomcat" />
+	<property name="password" value="tomcat" />
+
+	<!-- Configure the custom Ant tasks for the Manager application -->
+	<target name="_def_tomcat_tasks">
+		<!-- tasks: deploy,undeploy,reload,stop,start,list,roles,resources -->
+		<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" />
+		<taskdef name="list" classname="org.apache.catalina.ant.ListTask" />
+		<taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" />
+		<taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask" />
+		<taskdef name="roles" classname="org.apache.catalina.ant.RolesTask" />
+		<taskdef name="start" classname="org.apache.catalina.ant.StartTask" />
+		<taskdef name="stop" classname="org.apache.catalina.ant.StopTask" />
+		<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" />
+	</target>
+
+	<!-- Executable Targets -->
+
+	<target name="compile" description="WebSip wow">
+		<mkdir dir="${dist.dir}" />
+		<war destfile="${dist.dir}/hqWow.war" webxml="WEB-INF/web.xml">
+			<fileset dir="" excludes="assets/**" />
+			<lib dir="WEB-INF/lib" />
+			<classes dir="WEB-INF/classes" />
+			<!-- <fileset dir="WEB-INF/" excludes="WEB-INF/**" /> -->
+		</war>
+	</target>
+
+	<target name="redeploy" description="Remove and Install web application" depends="_def_tomcat_tasks">
+		<antcall target="deploy" />
+	</target>
+
+
+	<target name="deploy" description="Install web application" depends="_def_tomcat_tasks,compile">
+		<deploy url="${url}" username="${username}" password="${password}" path="${path}" war="${dist.dir}/hqWow.war" />
+	</target>
+
+	<target name="undeploy" description="Remove web application" depends="_def_tomcat_tasks">
+		<undeploy url="${url}" username="${username}" password="${password}" path="${path}" />
+	</target>
+
+	<target name="reload" description="Reload web application" depends="_def_tomcat_tasks,compile">
+		<reload url="${url}" username="${username}" password="${password}" path="${path}" />
+	</target>
+
+</project>
