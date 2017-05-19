@@ -95,18 +95,18 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.hq.entity.Country</value>
-				<value>com.hq.entity.ExchangeRate</value>
+				<value>com.wt.entity.Country</value>
+				<value>com.wt.entity.ExchangeRate</value>
 
-				<value>com.hq.entity.User</value>
-				<value>com.hq.entity.Dictionary</value>
-				<value>com.hq.entity.RecordSMS</value>
-				<value>com.hq.entity.RecordTrends</value>
-				<value>com.hq.entity.RecordCore</value>
+				<value>com.wt.entity.User</value>
+				<value>com.wt.entity.Dictionary</value>
+				<value>com.wt.entity.RecordSMS</value>
+				<value>com.wt.entity.RecordTrends</value>
+				<value>com.wt.entity.RecordCore</value>
 
-				<value>com.hq.entity.SendMail</value>
+				<value>com.wt.entity.SendMail</value>
 
-				<value>com.hq.entity.UserSys</value>
+				<value>com.wt.entity.UserSys</value>
 			</list>
 		</property>
 		<!--配置Hibernate的属性 -->
@@ -141,7 +141,7 @@
 		<property name="maxUploadSize" value="2147483648"></property>
 	</bean>
 
-	<bean id="imageUploadHandler" class="com.hq.base.util.FileImgHandler">
+	<bean id="imageUploadHandler" class="com.wt.base.util.FileImgHandler">
 		<property name="location" value="${remote.trendsimg}" />
 	</bean>
 

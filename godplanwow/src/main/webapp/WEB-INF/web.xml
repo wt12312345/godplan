@@ -80,7 +80,7 @@
   </filter-mapping>
   <filter>
     <filter-name>CORSFilter</filter-name>
-    <filter-class>com.hq.web.controller.CORSFilter</filter-class>
+    <filter-class>com.wt.web.controller.CORSFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>CORSFilter</filter-name>

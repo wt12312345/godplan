@@ -1,4 +1,4 @@
-package com.hq;
+package com.wt;
 
 public class SessionName {
 	public static final String BeforeLoginUrlThenLogin = "BeforeLoginUrlThenLogin";

@@ -1,4 +1,4 @@
-2016-11-30 14:50:29  [ main:657 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@a1ddfdd]
+2016-11-30 14:50:29  [ main:657 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@a1ddfdd]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -26,7 +26,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.wt.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
@@ -43,7 +43,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	... 25 more
-Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.wt.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1357)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:629)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
@@ -62,7 +62,7 @@ Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Canno
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
 	... 39 more
-Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
 	at java.security.AccessController.doPrivileged(Native Method)
@@ -75,7 +75,7 @@ Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1402)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1349)
 	... 55 more
-2016-11-30 14:51:14  [ main:673 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@a1ddfdd]
+2016-11-30 14:51:14  [ main:673 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@432dbb4b] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@a1ddfdd]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -103,7 +103,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dwrHandlerMapping': Initialization of bean failed; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.wt.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
@@ -120,7 +120,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	... 25 more
-Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.hq.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.wt.base.util.FileImgHandler] for bean with name 'imageUploadHandler' defined in URL [file:src/main/webapp/WEB-INF/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1357)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:629)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
@@ -139,7 +139,7 @@ Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Canno
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1575)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
 	... 39 more
-Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
+Caused by: java.lang.ClassNotFoundException: com.wt.base.util.FileImgHandler
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
 	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
 	at java.security.AccessController.doPrivileged(Native Method)
@@ -152,7 +152,7 @@ Caused by: java.lang.ClassNotFoundException: com.hq.base.util.FileImgHandler
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1402)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1349)
 	... 55 more
-2016-11-30 14:52:53  [ main:11420 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@194d35d]
+2016-11-30 14:52:53  [ main:11420 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@194d35d]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -224,7 +224,7 @@ Caused by: java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiv
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
 	... 55 more
-2016-11-30 14:58:13  [ main:7275 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@131c8e88]
+2016-11-30 14:58:13  [ main:7275 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1ae4b3b8] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@131c8e88]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
@@ -296,8 +296,8 @@ Caused by: java.lang.NoSuchMethodError: javax.servlet.ServletContext.getEffectiv
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579)
 	... 55 more
-2016-11-30 15:28:35  [ main:331 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@30804b08] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@5b21409a]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.hq.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2016-11-30 15:28:35  [ main:331 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@30804b08] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@5b21409a]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.wt.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.wt.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
@@ -327,14 +327,14 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.wt.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1463)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1094)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
 	... 28 more
-2016-11-30 15:42:17  [ main:340 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@737797b1] to prepare test instance [com.hq.yxt.channel.controller.test.TestUserController@5746e7cc]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.hq.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2016-11-30 15:42:17  [ main:340 ] - [ ERROR ]  Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@737797b1] to prepare test instance [com.wt.yxt.channel.controller.test.TestUserController@5746e7cc]
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.wt.yxt.channel.controller.test.TestUserController': Unsatisfied dependency expressed through field 'userController'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.wt.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
@@ -364,7 +364,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.hq.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean found for dependency [com.wt.yxt.channel.controller.UserController]: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1463)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1094)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)

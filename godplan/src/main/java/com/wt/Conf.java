@@ -1,4 +1,4 @@
-package com.hq;
+package com.wt;
 
 public class Conf {
 	public final static String RedisIp = "192.168.1.66";
