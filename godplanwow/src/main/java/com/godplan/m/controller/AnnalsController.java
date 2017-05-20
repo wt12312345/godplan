@@ -7,86 +7,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.godplan.entity.Annals;
 import com.godplan.m.service.AnnalsService;
+import com.godplan.m.service.bo.SearchBo;
 import com.godplan.m.vo.AnnalsVo;
 import com.wt.base.constant.BegCode;
 import com.wt.base.util.TypeUtil;
 import com.wt.web.controller.AbstractController;
 import com.wt.web.domain.JsonResponse;
-import com.wt.web.domain.WebView;
+import com.wt.web.domain.Page;
 
 @Controller
-@RequestMapping("/m/annals")
+@RequestMapping("/m")
 public class AnnalsController extends AbstractController {
 
 	@Resource
 	private AnnalsService annalsService;
-	private ModelAndView mav = null;
-
-	@RequestMapping(value = "/list", method = { RequestMethod.GET })
-	public ModelAndView list(HttpServletRequest request,
-			HttpServletResponse response) {
-		mav = new WebView("m/annals/annalsList");
-		return mav;
-	}
 
 	@ResponseBody
-	@RequestMapping(value = "/getList", method = { RequestMethod.POST })
-	public JsonResponse getList(HttpServletRequest request,
-			HttpServletResponse response) {
+	@RequestMapping(value = "/annalses", method = { RequestMethod.GET })
+	public JsonResponse annalsList(HttpServletRequest request, HttpServletResponse response) {
 		JsonResponse jr = new JsonResponse();
-		List<Annals> listAnnals = annalsService.getAnnalsList(0, 0);
-		// String keyWord = TypeUtil.toString(request.getParameter("keyWord"));
-		// if (keyWord.isEmpty()) {
-		// int page = TypeUtil.toInt(request.getParameter("page"));
-		// if (page == 0) {
-		// page = 1;
-		// }
-		// listAnnals = myLifeService.getAnnalsList(30, page);
-		// } else {
-		// listAnnals = myLifeService.getAnnalsList(keyWord);
-		// }
+		Page page = new Page(0, 0, -1);
+		String keyWord = TypeUtil.toString(request.getParameter("keyWord"));
+		String orderBy = TypeUtil.toString(request.getParameter("orderBy"));
+		List<Annals> listAnnals = annalsService.getList(page, orderBy, new SearchBo(keyWord));
 		jr.setObj(listAnnals);
 		jr.setCode(BegCode.SUCCESS);
 		return jr;
 	}
 
-	@RequestMapping(value = "/edit", method = { RequestMethod.GET })
-	public ModelAndView edit(HttpServletRequest request,
-			HttpServletResponse response) {
-		try {
-			mav = new WebView("m/annals/annalsEdit");
-			long id = TypeUtil.toLong(request.getParameter("id"));
-			Annals item = null;
-			if (id == 0) {
-				item = new Annals();
-			} else {
-				item = annalsService.getEntity(id);
-				if (item == null) {
-					redirectToPage(response, "m/annals/list");
-					return null;
-				}
-			}
-			mav.addObject("item", AnnalsVo.getVo(item));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mav;
-	}
-
 	@ResponseBody
-	@RequestMapping(value = "/getAnnals", method = { RequestMethod.POST,
-			RequestMethod.GET })
-	public JsonResponse getAnnals(HttpServletRequest request,
-			HttpServletResponse response) {
+	@RequestMapping(value = "/annalses/{id}", method = { RequestMethod.GET })
+	public JsonResponse annals(HttpServletRequest request, HttpServletResponse response, @PathVariable long id) {
 		JsonResponse jr = new JsonResponse();
-		long id = TypeUtil.toLong(request.getParameter("id"));
 		Annals item = null;
 		if (id == 0) {
 			item = new Annals();
@@ -102,10 +61,10 @@ public class AnnalsController extends AbstractController {
 		return jr;
 	}
 
-	@RequestMapping(value = "/saveAnnals", method = { RequestMethod.POST })
 	@ResponseBody
-	public JsonResponse saveAnnals(HttpServletRequest request,
-			HttpServletResponse response, AnnalsVo annalsVo) {
+	@RequestMapping(value = "/annalses/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
+	public JsonResponse annalsEdit(HttpServletRequest request, HttpServletResponse response, @PathVariable long id,
+			AnnalsVo annalsVo) {
 		JsonResponse jr = new JsonResponse();
 		try {
 			Annals item = null;

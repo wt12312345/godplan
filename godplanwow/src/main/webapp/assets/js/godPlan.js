@@ -2,7 +2,16 @@
 var wwwApi = "http://" + window.location.host + '/m/';
 var imgPath = wwwPath + "trends/img/";
 var asstesImg = wwwPath + "assets/img/";
-
+var enumStatus = {
+	enable : {
+		index : 1,
+		name : "可用"
+	},
+	freeze : {
+		index : 1,
+		name : "可用"
+	}
+};
 var api = {
 	doLogin : {
 		url : wwwApi + "userSyses/login",

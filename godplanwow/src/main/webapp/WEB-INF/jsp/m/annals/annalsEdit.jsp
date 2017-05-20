@@ -107,7 +107,7 @@
 							<div class="form-group col-sm-12">
 								<div class="col-sm-2"></div>
 								<div class="col-sm-10">
-									<span class="btn btn-primary" onclick="doSave()"> <i class="glyphicon glyphicon-fire"></i> 保存
+									<span class="btn btn-primary" onclick="doSave()"> <i class="glyphicon glyphicon-floppy-disk"></i> 保存
 									</span>
 								</div>
 							</div>

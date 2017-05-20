@@ -121,7 +121,7 @@ public class UserSysController extends AbstractController {
 		logger.info("管理员:" + (userSys == null ? null : userSys.getLoginName()) + "退出");
 		session.invalidate();
 
-		jr = new JsonResponse(BegCode.SUCCESS);
+		jr.setCode(BegCode.SUCCESS);
 		return jr;
 	}
 

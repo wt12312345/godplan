@@ -88,7 +88,7 @@
 									<div class="col-md-2"></div>
 									<div class="col-md-10">
 										<span class="btn btn-primary" onclick="doSave()">
-										    <i class="glyphicon glyphicon-fire"></i> 保存
+										    <i class="glyphicon glyphicon-floppy-disk"></i> 保存
 										</span>
 									</div>
 								</div>

@@ -3,9 +3,9 @@
 
 <div class="body-page-menu-title">管理后台</div>
 <ul class="body-page-menu-list" id="side-menu">
-	<li><a class="index" href="${path}m/index"><i
+	<li><a class="index" href="${path}m/page/index"><i
 			class="glyphicon glyphicon-home"></i>首页</a></li>
-
+ 
 	<c:forEach items="${sessionScope.UserSys.listMenu}" var="item"
 		varStatus="itemIndex">
 		<li id="menu-${itemIndex.index }"><a role="button"

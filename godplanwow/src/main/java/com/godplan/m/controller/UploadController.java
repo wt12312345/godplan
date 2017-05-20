@@ -80,7 +80,7 @@ public class UploadController extends HttpServlet {
 	public JsonResponse req(HttpSession session, HttpServletResponse response) {
 		int progressBarBoxContent = Integer.parseInt(session.getAttribute(
 				"fileuploadprogress").toString());
-		JsonResponse js = new JsonResponse(0);
+		JsonResponse js = new JsonResponse();
 		js.setMsg(progressBarBoxContent + "");
 		return js;
 

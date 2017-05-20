@@ -65,7 +65,7 @@ public class MenuController extends AbstractController {
 			menuService.saveOrUpdate(item);
 
 			jr.setCode(BegCode.SUCCESS);
-			jr.setId(item.getId());
+			jr.setObj(item.getId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

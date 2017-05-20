@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>阅无止境 - 管理后台</title>
+<title>阅·无止境 - 管理后台</title>
 <jsp:include page="../include/pageStyle.jsp"></jsp:include>
 <style type="text/css">
 textarea {
@@ -33,7 +33,6 @@ textarea {
 					<table class="table table-hover" id="listTable">
 						<thead>
 							<tr>
-								<th>标题</th>
 								<th>内容</th>
 								<th>操作</th>
 							</tr>
@@ -49,9 +48,9 @@ textarea {
 		
 	</script>
 	<script type="text/javascript">
-		var page = 1;
+		var pageCurrent = 1;
 		$(function() {
-			$.get(wwwPath + "m/joke/getJokeList", "page=" + page, getSuc);
+			$.get(wwwPath + "m/jokes", "pageCurrent=" + pageCurrent, getSuc);
 		});
 		function ctlWin() {
 			$("#addTable").toggle();
@@ -66,30 +65,18 @@ textarea {
 					var statusName = "";
 					if (one.status == 1) {
 						statusName = "冻结";
-					} else if (one.status == 0) {
+					} else if (one.status == 2) { 
 						statusName = "激活";
 					}
 					htmlArr[i] = '<tr><td><input type="text" class="form-control" value="'
-							+ one.name
-							+ '" id="name'
-							+ id
-							+ '"/>'
-							+ '</td><td><textarea class="form-control" id="content'
-							+ id
-							+ '">'
-							+ one.content
-							+ '</textarea></td><td><span class="btn btn-primary" id="saveBtn'
-							+ id
-							+ '" onclick="saveJoke('
-							+ id
-							+ ')"><i class="glyphicon glyphicon-fire"></i></span> <span class="btn btn-danger btn-sm" id="joke'
-							+ id
-							+ '" onclick="changeStatus('
-							+ id
-							+ ')">'
-							+ statusName + '</span><i></td>';
+							+ one.name + '" id="name' + id + '"/><br />'
+							+ '<textarea class="form-control" id="content' + id + '">' + one.content
+							+ '</textarea></td><td><span class="btn btn-danger btn-sm" id="joke'
+							+ id + '" onclick="changeStatus(' + id + ')">'
+							+ statusName + '</span><br /><br /><br /><br /><span class="btn btn-primary" id="saveBtn' + id
+							+ '" onclick="saveJoke(' + id + ')"><i class="glyphicon glyphicon-floppy-disk"></i></span></td>';
 				}
-				page++;
+				pageCurrent++;
 				$("#listTable tbody").append(
 						'<tr>' + htmlArr.join('</tr><tr>') + '</tr>');
 			} else {
@@ -97,15 +84,14 @@ textarea {
 			}
 		}
 		function changeStatus(selectId) {
-			$.post(wwwPath + "m/changeStatus", "id=" + selectId,
+			$.post(wwwPath + "m/jokes/" + selectId + "/approval", "",
 					function(data) {
 						if (data.code == 1) {
-							if (data.status == 0) {
+							if (data.obj == enumStatus.freeze.index) {
 								$("#joke" + selectId).html("激活");
-							} else if (data.status == 1) {
+							} else if (data.obj == enumStatus.enable.index) {
 								$("#joke" + selectId).html("冻结");
 							}
-
 						} else {
 							alert(data.msg);
 						}
@@ -115,8 +101,8 @@ textarea {
 		function saveJoke(id) {
 			var name = $("#name" + id).val();
 			var content = $("#content" + id).val();
-			$.post(wwwPath + "m/saveJoke", "name=" + name + "&content="
-					+ content + "&id=" + id, function(data) {
+			$.post(wwwPath + "m/jokes/" + id, "name=" + name + "&content="
+					+ content, function(data) {
 				if (data.code == 1) {
 					alert("OK");
 				} else {

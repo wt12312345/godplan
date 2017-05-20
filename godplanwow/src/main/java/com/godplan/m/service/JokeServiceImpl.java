@@ -7,15 +7,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.godplan.constant.EnumCom;
 import com.godplan.dao.JokeDao;
 import com.godplan.entity.Joke;
+import com.godplan.m.service.bo.SearchBo;
+import com.wt.base.util.TypeUtil;
 import com.wt.web.dao.WtCondition;
+import com.wt.web.domain.Page;
 import com.wt.web.service.AbstractServiceImpl;
 
 @Service("jokeService")
-public class JokeServiceImpl extends AbstractServiceImpl<Joke> implements
-		JokeService {
+public class JokeServiceImpl extends AbstractServiceImpl<Joke> implements JokeService {
 	@Resource
 	private JokeDao jokeDao;
 
@@ -25,23 +26,37 @@ public class JokeServiceImpl extends AbstractServiceImpl<Joke> implements
 	}
 
 	@Override
-	public List<Joke> getList(int page,int pageSize) throws Exception {
+	public List<Joke> getList(Page page, String orderBy, SearchBo search) throws Exception {
 		List<WtCondition> conditions = new ArrayList<WtCondition>();
-		return jokeDao.findByCondition(pageSize, conditions, page);
+		if (!TypeUtil.isEmpty(search.getKeyWord())) {
+			conditions.add(new WtCondition(new WtCondition(WtCondition.LIKE, "name", search.getKeyWord()),
+					new WtCondition(WtCondition.LIKE, "content", search.getKeyWord())));
+		}
+		if (search.getStatus() > 0) {
+			conditions.add(new WtCondition(WtCondition.EQ, "status", search.getStatus()));
+		}
+		if (search.getStartTime() != null) {
+			conditions.add(new WtCondition(WtCondition.GE, "createTime", search.getStartTime()));
+		}
+		if (search.getEndTime() != null) {
+			conditions.add(new WtCondition(WtCondition.LE, "createTime", search.getEndTime()));
+		}
+		// 排序
+		if (TypeUtil.isEmpty(orderBy)) {
+			orderBy = "id-d";
+		}
+		String sortMode = WtCondition.ASC;
+		if (orderBy.contains("-d")) {
+			sortMode = WtCondition.DESC;
+		}
+		orderBy = orderBy.replace("-d", "");
+		conditions.add(new WtCondition(sortMode, orderBy));
+		// 分页
+		if (page.getTotal() == 0) {
+			int count = jokeDao.findCountByCondition(conditions);
+			page.setTotal(count);
+		}
+		return jokeDao.findByCondition(page.getSize(), conditions, page.getCurrent());
 	}
 
-	@Override
-	public List<Joke> getListNew(long lastId) throws Exception {
-		List<WtCondition> conditions = new ArrayList<WtCondition>();
-		conditions.add(new WtCondition(WtCondition.GT, "id", lastId));
-		conditions.add(new WtCondition(WtCondition.EQ, "status", 1));
-		return jokeDao.findByCondition(conditions);
-	}
-
-	@Override
-	public List<Joke> getListValid() throws Exception {
-		List<WtCondition> conditions = new ArrayList<WtCondition>();
-		conditions.add(new WtCondition(WtCondition.EQ, "status", EnumCom.Enable.getIndex()));
-		return jokeDao.findByCondition(conditions);
-	}
 }

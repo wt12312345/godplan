@@ -43,7 +43,7 @@
 								<td>&nbsp;</td>
 								<th>
 									<span class="btn btn-primary" onclick="doSave()">
-										<i class="glyphicon glyphicon-fire"></i> 保存
+										<i class="glyphicon glyphicon-floppy-disk"></i> 保存
 									</span>
 								</th>
 							</tr>
