@@ -32,7 +32,7 @@ public class Joke extends AbstractEntity {
 	@JoinColumn(name = "user_id")
 	private User user;
 	/**
-	 * 0：冻结、1可用、-1删除
+	 *1 可用; 88 冻结;-1 删除
 	 */
 	private int status = 0;
 	@Column(length = 20)

@@ -61,7 +61,7 @@ public enum EnumCom {
 		}
 
 		public int getIndex() {
-			return 2;
+			return 88;
 		}
 	},
 	/**
