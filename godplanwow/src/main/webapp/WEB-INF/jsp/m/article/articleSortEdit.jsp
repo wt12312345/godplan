@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>添加/修改类别 - 后台管理</title>
+<title>添加/修改类别 - 管理后台</title>
 <link rel="stylesheet"
 	href="${assets}plugin/bootstrap/css/bootstrap.min.css">
 <link href="${assets }css/admin/total.css" rel="stylesheet"

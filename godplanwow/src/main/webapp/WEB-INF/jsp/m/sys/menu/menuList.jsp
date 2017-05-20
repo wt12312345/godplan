@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>菜单管理 - 后台管理</title>
+<title>菜单管理 - 管理后台</title>
 <jsp:include page="../../include/pageStyle.jsp"></jsp:include>
 </head>
 <body>
@@ -19,7 +19,9 @@
 				<div class="main-title">
 					<h1>菜单管理</h1>
 					<div class="main-title-btn">
-						<a class="btn btn-primary" href="${path}m/sys/menuEdit"><i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-plus"></i></a>
+						<a class="btn btn-primary" href="${path}m/page/menuEdit"><i
+							class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i
+							class="glyphicon glyphicon-plus"></i></a>
 					</div>
 				</div>
 				<div class="main-form">
@@ -40,27 +42,39 @@
 								<tr>
 									<td>${item.id }</td>
 									<td><i class="glyphicon ${item.iconName }"></i></td>
-									<td colspan="2"><input type="text" class="form-control" value="${item.name }" /></td>
-									<td><input type="text" class="form-control" value="${item.action }" /></td>
-									<td><input type="text" class="form-control" value="${item.sortIndex }" /></td>
-									<td>
-										<a class="btn btn-primary btn-sm" href="${path}m/sys/menuEdit?parentId=${item.id}"><i class="glyphicon glyphicon-plus"></i></a>
-										<a class="btn btn-warning btn-sm" href="${path}m/sys/menuEdit?id=${item.id}"><i class="glyphicon glyphicon-pencil"></i></a>
-										<span class="btn btn-danger btn-sm" onclick="delMenu(${item.id})"><i class="glyphicon glyphicon-remove"></i></span> 
-									</td>
+									<td colspan="2"><input type="text" class="form-control"
+										value="${item.name }" /></td>
+									<td><input type="text" class="form-control"
+										value="${item.action }" /></td>
+									<td><input type="text" class="form-control"
+										value="${item.sortIndex }" /></td>
+									<td><a class="btn btn-primary btn-sm"
+										href="${path}m/page/menuEdit?parentId=${item.id}"><i
+											class="glyphicon glyphicon-plus"></i></a> <a
+										class="btn btn-warning btn-sm"
+										href="${path}m/page/menuEdit?id=${item.id}"><i
+											class="glyphicon glyphicon-pencil"></i></a> <span
+										class="btn btn-danger btn-sm" onclick="delMenu(${item.id})"><i
+											class="glyphicon glyphicon-remove"></i></span></td>
 								</tr>
-								<c:forEach items="${item.listChild }" var="menu">
+								<c:forEach items="${item.listSub }" var="itemSub">
 									<tr>
 										<td></td>
 										<td>${menu.id }</td>
-										<td><input type="text" class="form-control" value="${menu.name }" /></td>
-										<td><input type="text" class="form-control" value="${menu.url }" /></td>
-										<td><input type="text" class="form-control" value="${menu.action }" /></td>
-										<td><input type="text" class="form-control" value="${menu.sortIndex }" /></td>
-										<td>
-											<a class="btn btn-warning btn-sm" href="${path }m/sys/menuEdit?id=${menu.id}"><i class="glyphicon glyphicon-pencil"></i></a>
-											<span class="btn btn-danger btn-sm" onclick="delMenu(${menu.id})"><i class="glyphicon glyphicon-remove"></i></span> 
-										</td>
+										<td><input type="text" class="form-control"
+											value="${itemSub.name }" /></td>
+										<td><input type="text" class="form-control"
+											value="${itemSub.url }" /></td>
+										<td><input type="text" class="form-control"
+											value="${itemSub.action }" /></td>
+										<td><input type="text" class="form-control"
+											value="${itemSub.sortIndex }" /></td>
+										<td><a class="btn btn-warning btn-sm"
+											href="${path }m/page/menuEdit?id=${itemSub.id}"><i
+												class="glyphicon glyphicon-pencil"></i></a> <span
+											class="btn btn-danger btn-sm"
+											onclick="delMenu(${itemSub.id})"><i
+												class="glyphicon glyphicon-remove"></i></span></td>
 									</tr>
 								</c:forEach>
 							</c:forEach>
@@ -76,7 +90,7 @@
 		function delMenu(_id) {
 			bootbox.confirm('确认删除此菜单？', function(result) {
 				if (result) {
-					$.post("${path}m/sys/delMenu", "id=" + _id, function(data) {
+					ajax.del("m/menus/" + _id, "", function(data) {
 						if (data.code == 1) {
 							wtCom.RefreshPage();
 						} else {

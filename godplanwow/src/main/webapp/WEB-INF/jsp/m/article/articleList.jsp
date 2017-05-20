@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>文章管理 - 后台管理</title>
+<title>文章管理 - 管理后台</title>
 <link rel="stylesheet"
 	href="${assets}plugin/bootstrap/css/bootstrap.min.css">
 <link href="${assets }css/admin/total.css" rel="stylesheet"

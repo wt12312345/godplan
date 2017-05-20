@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>后台访问记录列表 - 后台管理</title>
+<title>后台访问记录列表 - 管理后台</title>
 <jsp:include page="../../include/pageStyle.jsp"></jsp:include><link
 	rel="stylesheet"
 	href="${assets }plugin/datetimepicker/jquery.datetimepicker.css">

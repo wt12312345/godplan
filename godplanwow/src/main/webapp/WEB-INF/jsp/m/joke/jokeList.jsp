@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>阅无止境 - 后台管理</title>
+<title>阅无止境 - 管理后台</title>
 <jsp:include page="../include/pageStyle.jsp"></jsp:include>
 <style type="text/css">
 textarea {

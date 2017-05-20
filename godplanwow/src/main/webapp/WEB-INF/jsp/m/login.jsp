@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>登录 - 后台管理</title>
+<title>登录 - 管理后台</title>
 <jsp:include page="include/pageStyle.jsp"></jsp:include>
 <style type="text/css">
 html,body {
 	width: 100%;
 	height: 100%;
-	background: url(img/1.jpg) no-repeat;
 	background-position: center;
 	background-attachment: fixed;
 	overflow: hidden;
@@ -93,10 +92,10 @@ html,body {
 			}
 			var args = 'loginName=' + loginName + '&password=' + password;
 			console.log(args);
-			$.post(wwwPath + "m/doLogin", args, function(data) {
+			$.post(api.doLogin.url, args, function(data) {
 				if (data.code) {
 					localStorage.setItem("menu-auth", JSON.stringify(data.obj));
-					window.location.href = "${path}m/index";
+					window.location.href = "${path}m/page/index";
 				} else {
 					$("#errInfo").html(data.msg);
 				}

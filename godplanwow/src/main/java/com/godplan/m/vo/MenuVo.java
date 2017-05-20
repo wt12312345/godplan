@@ -15,7 +15,7 @@ public class MenuVo {
 	private int sortIndex = 0;
 	private String iconName = "";
 	private String action = "";
-	private List<MenuVo> listChild = new ArrayList<MenuVo>();
+	private List<MenuVo> listSub = new ArrayList<MenuVo>();
 
 	public static List<MenuVo> getVo(List<Menu> list) {
 		List<MenuVo> listVo = new ArrayList<MenuVo>();
@@ -34,7 +34,7 @@ public class MenuVo {
 		}
 		for (int i = 0; i < listVo.size(); i++) {
 			MenuVo sortVo = listVo.get(i);
-			sortVo.setListChild(mapChild.get(sortVo.getId()));
+			sortVo.setListSub(mapChild.get(sortVo.getId()));
 		}
 		return listVo;
 	}
@@ -98,19 +98,19 @@ public class MenuVo {
 		this.iconName = iconName;
 	}
 
-	public List<MenuVo> getListChild() {
-		return listChild;
-	}
-
-	public void setListChild(List<MenuVo> listChild) {
-		this.listChild = listChild;
-	}
-
 	public String getAction() {
 		return action;
 	}
 
 	public void setAction(String action) {
 		this.action = action;
+	}
+
+	public List<MenuVo> getListSub() {
+		return listSub;
+	}
+
+	public void setListSub(List<MenuVo> listSub) {
+		this.listSub = listSub;
 	}
 }

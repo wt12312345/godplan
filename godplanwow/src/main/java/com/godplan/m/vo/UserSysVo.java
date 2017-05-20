@@ -14,6 +14,7 @@ public class UserSysVo {
 	 * 是否有效 1 有效 0 禁用 -1删除
 	 */
 	private int status = 0;
+	private List<MenuVo> listMenu = new ArrayList<>();
 
 	public static List<UserSysVo> getVo(List<UserSys> list) {
 		List<UserSysVo> listVo = new ArrayList<UserSysVo>();
@@ -72,6 +73,14 @@ public class UserSysVo {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public List<MenuVo> getListMenu() {
+		return listMenu;
+	}
+
+	public void setListMenu(List<MenuVo> listMenu) {
+		this.listMenu = listMenu;
 	}
 
 }

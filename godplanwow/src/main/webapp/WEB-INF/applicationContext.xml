@@ -101,6 +101,7 @@
 				<value>com.godplan.entity.SendMail</value>
 
 				<value>com.godplan.entity.UserSys</value>
+				<value>com.godplan.entity.Menu</value>
 				<value>com.godplan.entity.User</value>
 			</list>
 		</property>

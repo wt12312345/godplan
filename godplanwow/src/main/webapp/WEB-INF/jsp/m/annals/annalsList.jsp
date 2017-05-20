@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>编年史管理 - 后台管理</title>
+<title>编年史管理 - 管理后台</title>
 <jsp:include page="../include/pageStyle.jsp"></jsp:include>
 </head>
 <body>

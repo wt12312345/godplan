@@ -10,7 +10,7 @@
 	href="${assets}plugin/bootstrap/css/bootstrap.min.css">
 <link href="${assets }css/admin/total.css" rel="stylesheet"
 	type="text/css" />
-<title>微信自定义菜单 - 后台管理</title>
+<title>微信自定义菜单 - 管理后台</title>
 <script src="${assets}plugin/jquery-1.11.1.min.js"></script>
 <script src="${assets}plugin/wt/js/wt.js" type="text/javascript"></script>
 <script src="${assets}js/godPlan.js?id=4" type="text/javascript"></script>

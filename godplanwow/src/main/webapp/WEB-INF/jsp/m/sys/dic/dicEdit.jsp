@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <html lang="zh">
 <head>
-<title>字典编辑 - 后台管理</title>
+<title>字典编辑 - 管理后台</title>
 <jsp:include page="../../include/pageStyle.jsp"></jsp:include>
 </head>
 <body>

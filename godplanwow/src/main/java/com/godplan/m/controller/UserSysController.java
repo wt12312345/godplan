@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.godplan.SessionName;
+import com.godplan.entity.Menu;
 import com.godplan.entity.UserSys;
 import com.godplan.m.SessionUtil;
+import com.godplan.m.service.MenuService;
 import com.godplan.m.service.UserSysService;
+import com.godplan.m.vo.MenuVo;
 import com.godplan.m.vo.UserSysVo;
 import com.wt.CallBackBo;
 import com.wt.base.constant.BegCode;
@@ -27,20 +29,14 @@ import com.wt.base.util.TypeUtil;
 import com.wt.base.util.WebUtil;
 import com.wt.web.controller.AbstractController;
 import com.wt.web.domain.JsonResponse;
-import com.wt.web.domain.WebView;
 
 @Controller
 @RequestMapping("/m")
 public class UserSysController extends AbstractController {
 	@Resource
 	private UserSysService userSysService;
-	private ModelAndView mav = null;
-
-	@RequestMapping(value = "/userSysesPage", method = { RequestMethod.GET })
-	public ModelAndView annals(HttpServletRequest request, HttpServletResponse response) {
-		mav = new WebView("m/sys/timer");
-		return mav;
-	}
+	@Resource
+	private MenuService menuService;
 
 	/**
 	 * 登录操作
@@ -52,7 +48,7 @@ public class UserSysController extends AbstractController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/userSyses/login", method = { RequestMethod.POST })
-	public JsonResponse doLogin(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+	public JsonResponse loginDo(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		JsonResponse jr = new JsonResponse();
 		try {
 			String userName = TypeUtil.toString(request.getParameter("loginName"));
@@ -71,7 +67,10 @@ public class UserSysController extends AbstractController {
 				userSysService.saveOrUpdate(userDb);
 
 				UserSysVo userSysVo = UserSysVo.getVo(userDb);
-
+				// 查询menu
+				List<Menu> listMenu = menuService.getAll();
+				List<MenuVo> listMenuVo = MenuVo.getVo(listMenu);
+				userSysVo.setListMenu(listMenuVo);
 				jr.setObj(userSysVo);
 				jr.setCode(BegCode.SUCCESS);
 
@@ -93,7 +92,7 @@ public class UserSysController extends AbstractController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/userSyses/login", method = { RequestMethod.GET })
-	public JsonResponse checkLogin(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+	public JsonResponse loginCheck(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		JsonResponse jr = new JsonResponse();
 		try {
 			UserSysVo userSys = SessionUtil.getUserSys(request);
@@ -196,7 +195,6 @@ public class UserSysController extends AbstractController {
 			@PathVariable long id) {
 		JsonResponse jr = new JsonResponse();
 		try {
-			long roleId = TypeUtil.toLong(request.getParameter("role"));
 			String loginName = TypeUtil.toString(request.getParameter("loginName"));
 			String name = TypeUtil.toString(request.getParameter("name"));
 			String email = TypeUtil.toString(request.getParameter("email"));

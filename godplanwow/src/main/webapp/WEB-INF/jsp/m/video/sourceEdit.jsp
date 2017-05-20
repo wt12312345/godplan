@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>视频来源编辑 - 后台管理</title>
+<title>视频来源编辑 - 管理后台</title>
 <jsp:include page="../include/pageStyle.jsp"></jsp:include>
 </head>
 <body>

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>微信公众号接入管理 - 后台管理</title>
+<title>微信公众号接入管理 - 管理后台</title>
 <script src="${assets}js/jquery.js"></script>
 <script src="${assets}js/back.js"></script>
 <script
