@@ -7,10 +7,8 @@ import org.apache.log4j.Logger;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.godplan.SessionName;
 import com.godplan.m.SessionUtil;
 import com.godplan.m.vo.UserSysVo;
-import com.wt.base.util.TypeUtil;
 import com.wt.base.webconf.PathConf;
 
 public class UserSysInterceptor implements HandlerInterceptor {

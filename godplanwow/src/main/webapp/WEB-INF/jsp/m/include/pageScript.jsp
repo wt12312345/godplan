@@ -1,7 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!-- 页面公共脚本 -->
 <script src="${assets}plugin/jquery-1.11.1.min.js"></script>
-<script src="${assets}plugin/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 <script type="text/javascript" src="${assets}plugin/wt/js/wt.js"></script>
 <script src="${assets}js/godPlan.js" type="text/javascript"></script>
 <script>

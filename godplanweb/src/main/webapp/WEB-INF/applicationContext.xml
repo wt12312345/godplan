@@ -15,25 +15,19 @@
 	<context:annotation-config></context:annotation-config>
 	<!-- 将类注解如spring 扫描区间 -->
 	<!-- 多个包名用逗号隔开, 但不能有空格 -->
-	<context:component-scan base-package="com.wt.service" />
-	<context:component-scan base-package="com.wt.dao" />
-	<context:component-scan base-package="com.wt.agent.service" />
-	<context:component-scan base-package="com.wt.agent.dao" />
-	<context:component-scan base-package="com.wt.erp5.service" />
-	<context:component-scan base-package="com.wt.erp5.dao" />
-	<context:component-scan base-package="com.wt.erp3.service" />
-	<context:component-scan base-package="com.wt.erp3.dao" />
+	<context:component-scan base-package="com.wt.wx.service" />
+	<context:component-scan base-package="com.wt.wx.dao" />
+	<context:component-scan base-package="com.godplan.service" />
+	<context:component-scan base-package="com.godplan.service.*" />
+	<context:component-scan base-package="com.godplan.dao" />
+	<context:component-scan base-package="com.godplan.dao.*" />
 
-	<context:component-scan base-package="com.godplan.m.service" />
-	<context:component-scan base-package="com.godplan.m.service.*" />
-	<context:component-scan base-package="com.godplan.m.dao" />
-	<context:component-scan base-package="com.godplan.m.dao.*" />
-	<context:component-scan base-package="com.godplan.mr" />
-	<context:component-scan base-package="com.godplan.mr.*" />
-	<context:component-scan base-package="com.godplan.m.manager" />
-	<context:component-scan base-package="com.godplan.m.manager.*" />
+	<context:component-scan base-package="com.godplan.web.service" />
+	<context:component-scan base-package="com.godplan.web.service.*" />
+	<context:component-scan base-package="com.godplan.web.manager" />
+	<context:component-scan base-package="com.godplan.web.manager.*" />
 
-	<context:component-scan base-package="com.godplan.m.quartz" />
+	<context:component-scan base-package="com.godplan.web.quartz" />
 
 	<!-- 启用 annotation 配置模式 -->
 	<dwr:configuration></dwr:configuration>
@@ -95,25 +89,30 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.wt.entity.Country</value>
-				<value>com.wt.entity.ExchangeRate</value>
+				<value>com.godplan.entity.Annals</value>
+				<value>com.godplan.entity.Article</value>
+				<value>com.godplan.entity.ArticleSort</value>
+				<value>com.godplan.entity.Dictionary</value>
+				<value>com.godplan.entity.HeadCombo</value>
+				<value>com.godplan.entity.Joke</value>
+				<value>com.godplan.entity.Buzzword</value>
+				
+				<value>com.godplan.entity.RecordChose</value>
+				<value>com.godplan.entity.RecordSMS</value>
+				<value>com.godplan.entity.RecordCore</value>
 
-				<value>com.wt.entity.User</value>
-				<value>com.wt.entity.Dictionary</value>
-				<value>com.wt.entity.RecordSMS</value>
-				<value>com.wt.entity.RecordTrends</value>
-				<value>com.wt.entity.RecordCore</value>
+				<value>com.godplan.entity.SendMail</value>
 
-				<value>com.wt.entity.SendMail</value>
-
-				<value>com.wt.entity.UserSys</value>
+				<value>com.godplan.entity.UserSys</value>
+				<value>com.godplan.entity.Menu</value>
+				<value>com.godplan.entity.User</value>
 			</list>
 		</property>
 		<!--配置Hibernate的属性 -->
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>

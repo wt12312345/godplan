@@ -41,6 +41,8 @@ public class User extends AbstractEntity {
 	 */
 	@Column(length = 100)
 	private String orgName = "";
+	@Column(length = 1000)
+	private String headImgUrl = "";
 	/**
 	 * 用于API对接
 	 */
@@ -445,6 +447,14 @@ public class User extends AbstractEntity {
 
 	public void setAppSecret(String appSecret) {
 		this.appSecret = appSecret;
+	}
+
+	public String getHeadImgUrl() {
+		return headImgUrl;
+	}
+
+	public void setHeadImgUrl(String headImgUrl) {
+		this.headImgUrl = headImgUrl;
 	}
 
 }

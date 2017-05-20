@@ -3,19 +3,13 @@ package com.godplan;
 public class SessionName {
 	public static final String BeforeLoginUrlThenLogin = "BeforeLoginUrlThenLogin";
 	public static final String UserSys = "UserSys";
+	public static final String UserWx = "UserWx";
 	/**
 	 * 获取短信验证码
 	 */
 	public static final String AuthCodeMobile = "AuthCodeMobile";
 	public static final String AuthCode = "AuthCode";
-	/**
-	 * 购物车商品总数量
-	 */
-	public static final String CartNum = "CartNum";
 	public static final String User = "User";
-	/**
-	 * 支付成功后，返回哪个页面
-	 */
-	public static final String PaySucToUrl = "PaySucToUrl";
+	public static final String JokeList = "JokeList";
 
 }

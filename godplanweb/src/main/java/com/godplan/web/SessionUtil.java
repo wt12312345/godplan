@@ -4,35 +4,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.godplan.SessionName;
-import com.godplan.web.vo.UserSysVo;
+import com.godplan.web.vo.UserVo;
 
-/** 从request，session中获取信息 */
 public class SessionUtil {
 
-	/**
-	 * 从session中获取 adminUser 系统管理员
-	 * 
-	 * @param session
-	 *            session
-	 * @param return systemManger 登入后存入session的对象
-	 */
-	public static UserSysVo getSystemManager(HttpSession session) {
-		if (session.getAttribute(SessionName.UserSys) == null) {
+	public static UserVo getUser(HttpSession session) {
+		if (session.getAttribute(SessionName.User) == null) {
 			return null;
 		} else {
-			return (UserSysVo) session.getAttribute(SessionName.UserSys);
+			return (UserVo) session.getAttribute(SessionName.User);
 		}
 	}
 
-	/**
-	 * 从request中获取 adminUser 系统管理员
-	 * 
-	 * @param request
-	 *            request
-	 * @param return systemManger 登入后存入session的对象
-	 */
-	public static UserSysVo getSystemManager(HttpServletRequest request) {
-		return getSystemManager(request.getSession());
+	public static UserVo getUser(HttpServletRequest request) {
+		return getUser(request.getSession());
 	}
 
+	public static UserVo getUserWx(HttpSession session) {
+		if (session.getAttribute(SessionName.UserWx) == null) {
+			return null;
+		} else {
+			return (UserVo) session.getAttribute(SessionName.UserWx);
+		}
+	}
+
+	public static UserVo getUserWx(HttpServletRequest request) {
+		return getUserWx(request.getSession());
+	}
 }
