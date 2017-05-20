@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:dwra="http://www.directwebremoting.org/schema/spring-dwr-annotations"
+	xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                http://www.springframework.org/schema/context 
+       			http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       			http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd
+       			http://www.directwebremoting.org/schema/spring-dwr-annotations http://www.directwebremoting.org/schema/spring-dwr-annotations.xsd">
+	<context:annotation-config></context:annotation-config>
+	<!-- 将类注解如spring 扫描区间 -->
+	<!-- 多个包名用逗号隔开, 但不能有空格 -->
+	<context:component-scan base-package="com.wt.wx.service" />
+	<context:component-scan base-package="com.wt.wx.dao" />
+	<context:component-scan base-package="com.godplan.service" />
+	<context:component-scan base-package="com.godplan.service.*" />
+	<context:component-scan base-package="com.godplan.dao" />
+	<context:component-scan base-package="com.godplan.dao.*" />
+
+	<context:component-scan base-package="com.godplan.web.service" />
+	<context:component-scan base-package="com.godplan.web.service.*" />
+	<context:component-scan base-package="com.godplan.web.manager" />
+	<context:component-scan base-package="com.godplan.web.manager.*" />
+
+	<context:component-scan base-package="com.godplan.web.quartz" />
+
+	<!-- 启用 annotation 配置模式 -->
+	<dwr:configuration></dwr:configuration>
+	<!-- spring容器中检查拥有@RemoteProxy 和 @RemoteMethod注解的类 -->
+	<dwr:annotation-config id="dwr"></dwr:annotation-config>
+	<!-- 要求DWR将util.js和engine.js映射到dwrController -->
+	<dwr:url-mapping></dwr:url-mapping>
+	<!-- 开启debug，部署项目时, 请把debug设为false -->
+	<dwr:controller id="dwrSrvice" debug="true"></dwr:controller>
+	<!-- 扫描需要转换的java对象 -->
+	<!-- <dwr:annotation-scan scanDataTransferObject="true" scanRemoteProxy="true" 
+		base-package="com.wt.wx.controller" /> <dwr:annotation-scan scanDataTransferObject="true" 
+		scanRemoteProxy="true" base-package="com.manage.controller" /> -->
+	<bean id="httpInvokerRequestExecutor"
+		class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor">
+		<property name="httpClient">
+			<bean class="org.apache.commons.httpclient.HttpClient">
+				<property name="connectionTimeout" value="2000" />
+				<property name="timeout" value="5000" />
+				<property name="httpConnectionManager">
+					<ref bean="multiThreadedHttpConnectionManager" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="multiThreadedHttpConnectionManager"
+		class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager">
+		<property name="params">
+			<bean
+				class="org.apache.commons.httpclient.params.HttpConnectionManagerParams">
+				<property name="maxTotalConnections" value="600" />
+				<property name="defaultMaxConnectionsPerHost" value="512" />
+			</bean>
+		</property>
+	</bean>
+	<!-- 数据库的配置，和网站的一些基本配置 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:conf.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!--本示例采用DBCP数据源，应预先把DBCP的jar包复制到工程的lib目录下。数据源配置如下 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!--SessionFactory的另一种配置方式。这种方式可取代Hibernate的核心配置文件，因为如以下配置所示， Hibernate的各种属性、实体映射文件等，都可以用这种方式配置 -->
+	<!-- 4的最新类，和3的配置不一样 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!--dataSource属性指定要用到的连接池 -->
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.godplan.entity.Annals</value>
+				<value>com.godplan.entity.Article</value>
+				<value>com.godplan.entity.ArticleSort</value>
+				<value>com.godplan.entity.Dictionary</value>
+				<value>com.godplan.entity.HeadCombo</value>
+				<value>com.godplan.entity.Joke</value>
+				<value>com.godplan.entity.Buzzword</value>
+				
+				<value>com.godplan.entity.RecordChose</value>
+				<value>com.godplan.entity.RecordSMS</value>
+				<value>com.godplan.entity.RecordCore</value>
+
+				<value>com.godplan.entity.SendMail</value>
+
+				<value>com.godplan.entity.UserSys</value>
+				<value>com.godplan.entity.Menu</value>
+				<value>com.godplan.entity.User</value>
+			</list>
+		</property>
+		<!--配置Hibernate的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- define the transaction manager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="templateSequnce"
+		class="org.springframework.jdbc.support.incrementer.MySQLMaxValueIncrementer">
+		<property name="incrementerName" value="template_sequnce" /> <!-- ①设置维护主键的表名 -->
+		<property name="columnName" value="id" /><!--②用于生成主键值的列名 -->
+		<property name="cacheSize" value="5" /> <!--③缓存大小 -->
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- use annotation to manage the tx -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<property name="maxUploadSize" value="2147483648"></property>
+	</bean>
+
+	<bean id="imageUploadHandler" class="com.wt.base.util.FileImgHandler">
+		<property name="location" value="${remote.trendsimg}" />
+	</bean>
+
+
+
+	<bean id="timerDataListenerDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="timerDataListener" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+	<bean id="timerDataListenerTrigger"
+		class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+		<property name="jobDetail" ref="timerDataListenerDetail" />
+		<property name="startDelay">
+			<value>10000</value>
+		</property>
+		<property name="repeatInterval">
+			<value>0</value>
+		</property>
+		<property name="repeatCount">
+			<value>0</value>
+		</property>
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="timerDataListenerTrigger" />
+			</list>
+		</property>
+	</bean>
+
+</beans>
+         
+         
