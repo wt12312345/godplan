@@ -29,7 +29,7 @@ textarea {
 					<h1>JOKE管理</h1>
 				</div>
 				<div class="main-form">
-					<h2>JOKE列表</h2>
+					<h2>数据列表</h2>
 					<table class="table table-hover" id="listTable">
 						<thead>
 							<tr>

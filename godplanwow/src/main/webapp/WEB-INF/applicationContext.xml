@@ -93,6 +93,7 @@
 				<value>com.godplan.entity.Dictionary</value>
 				<value>com.godplan.entity.HeadCombo</value>
 				<value>com.godplan.entity.Joke</value>
+				<value>com.godplan.entity.Buzzword</value>
 				
 				<value>com.godplan.entity.RecordChose</value>
 				<value>com.godplan.entity.RecordSMS</value>

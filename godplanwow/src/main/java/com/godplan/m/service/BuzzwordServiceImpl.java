@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.godplan.dao.BuzzwordDao;
 import com.godplan.entity.Buzzword;
+import com.godplan.m.service.bo.SearchBo;
 import com.wt.base.util.TypeUtil;
 import com.wt.web.dao.WtCondition;
 import com.wt.web.domain.Page;
@@ -25,8 +26,9 @@ public class BuzzwordServiceImpl extends AbstractServiceImpl<Buzzword> implement
 	}
 
 	@Override
-	public List<Buzzword> getList(Page page, String orderBy, String keyWord) {
+	public List<Buzzword> getList(Page page, String orderBy, SearchBo search) {
 		List<WtCondition> conditions = new ArrayList<WtCondition>();
+		String keyWord = search.getKeyWord();
 		if (!TypeUtil.isEmpty(keyWord)) {
 			conditions.add(new WtCondition(new WtCondition(WtCondition.LIKE, "title", keyWord),
 					new WtCondition(WtCondition.LIKE, "tags", keyWord),

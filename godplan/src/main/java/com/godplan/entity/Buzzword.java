@@ -33,7 +33,7 @@ public class Buzzword extends AbstractEntity {
 	private String content = "";
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-	private Date editTime = new Date();
+	private Date time = new Date();
 
 	public String getTitle() {
 		return title;
@@ -47,8 +47,8 @@ public class Buzzword extends AbstractEntity {
 		return content;
 	}
 
-	public Date getEditTime() {
-		return editTime;
+	public Date getTime() {
+		return time;
 	}
 
 	public void setTitle(String title) {
@@ -63,8 +63,8 @@ public class Buzzword extends AbstractEntity {
 		this.content = content;
 	}
 
-	public void setEditTime(Date editTime) {
-		this.editTime = editTime;
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 }

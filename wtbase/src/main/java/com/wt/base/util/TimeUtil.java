@@ -291,6 +291,22 @@ public class TimeUtil {
 			}
 		}
 	}
+	
+	public static Date getDateMonthByStr(String str) {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+			Date date = sdf.parse(str);
+			return date;
+		} catch (ParseException e) {
+			try {
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM");
+				Date date = sdf.parse(str);
+				return date;
+			} catch (ParseException e2) {
+				return null;
+			}
+		}
+	}
 
 	/**
 	 * yyyy-MM-dd HH:mm
@@ -327,6 +343,26 @@ public class TimeUtil {
 		}
 		try {
 			SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd");
+			String result = df1.format(date);
+			return result;
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	/**
+	 * yyyy-MM
+	 * 
+	
+	 * @param date
+	 * @return
+	 */
+	public static String getDateMonthStr(Date date) {
+		if (date == null) {
+			return "";
+		}
+		try {
+			SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM");
 			String result = df1.format(date);
 			return result;
 		} catch (Exception e) {

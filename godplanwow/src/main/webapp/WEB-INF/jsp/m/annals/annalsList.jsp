@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<div class="main-form">
-					<h2>编年史列表</h2>
+					<h2>数据列表</h2>
 					<table class="table table-bordered" id="tableList">
 						<thead>
 							<tr>
