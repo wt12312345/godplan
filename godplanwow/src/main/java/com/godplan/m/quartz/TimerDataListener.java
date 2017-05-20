@@ -1,7 +1,5 @@
 package com.godplan.m.quartz;
 
-import javax.annotation.Resource;
-
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 

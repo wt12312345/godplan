@@ -74,7 +74,7 @@ public class LoginController extends AbstractController {
 					.getParameter("loginName"));
 			String password = MD5Util.string2MD5(TypeUtil.toString(request
 					.getParameter("password")));
-			UserSys userSys = userSysService.getUserSys(userName);
+			UserSys userSys = userSysService.getByLoginName(userName);
 			if (userSys == null) {
 				jr.setMsg("用户不存在");
 			} else if (!userSys.getPassword().equals(password)) {
@@ -88,29 +88,10 @@ public class LoginController extends AbstractController {
 				List<Menu> listMenu = menuService.getAll();
 				List<MenuVo> listMenuVo = MenuVo.getVo(listMenu);
 
-				// 查询权限
-				List<Uri> listUri = uriService.getAll();
-				List<UriVo> listUriVo = UriVo.getTinyVo(listUri);
-
 				LoginVo login = new LoginVo();
 				login.setListMenu(listMenuVo);
-				login.setListUri(listUriVo);
 
 				UserSysVo userSysVo = UserSysVo.getVo(userSys);
-				String uriId = userSysVo.getUri();
-				
-				if (uriId != null) {
-					String[] arrUri = uriId.split(",");
-					for (int i = 0; i < listUriVo.size(); i++) {
-						for (int j = 0; j < arrUri.length; j++) {
-							long tempId = TypeUtil.toLong(arrUri[j]);
-							if (listUriVo.get(i).getId() == tempId) {
-								listUriVo.get(i).setValid(true);
-								break;
-							}
-						}
-					}
-				}
 				
 				jr.setObj(login);
 				jr.setCode(BegCode.SUCCESS);
@@ -162,18 +143,18 @@ public class LoginController extends AbstractController {
 	}
 
 	/** 修改密码 */
-	@RequestMapping(value = "/savePassword", method = { RequestMethod.POST })
-	@ResponseBody
-	public JsonResponse savePassword(HttpServletRequest request,
-			HttpServletResponse response) {
-		String oldPasswd = request.getParameter("oldPassword");
-		String newPasswd = request.getParameter("password");
-		UserSys systemManager = SessionUtil.getUserSys(request);
-		oldPasswd = MD5Util.string2MD5(oldPasswd);
-		newPasswd = MD5Util.string2MD5(newPasswd);
-		JsonResponse jr = userSysService.changePwd((systemManager == null ? ""
-				: systemManager.getLoginName()), oldPasswd, newPasswd);
-		return jr;
-
-	}
+//	@RequestMapping(value = "/savePassword", method = { RequestMethod.POST })
+//	@ResponseBody
+//	public JsonResponse savePassword(HttpServletRequest request,
+//			HttpServletResponse response) {
+//		String oldPasswd = request.getParameter("passwordOld");
+//		String newPasswd = request.getParameter("password");
+//		UserSysVo systemManager = SessionUtil.getUserSys(request);
+//		oldPasswd = MD5Util.string2MD5(oldPasswd);
+//		newPasswd = MD5Util.string2MD5(newPasswd);
+//		JsonResponse jr = userSysService.changePwd((systemManager == null ? ""
+//				: systemManager.getLoginName()), oldPasswd, newPasswd);
+//		return jr;
+//
+//	}
 }
