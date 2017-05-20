@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<title></title>
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/wt.css" />
+		<script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="./plus/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/wt.js"></script>
+		<script>
+			$(function() {
+				$('#demo_date').mobiscroll().date({
+					theme: "sense-ui", // Specify theme like: theme: 'ios' or omit setting to use default 
+					mode: "scroller", // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+					display: "modal", // Specify display mode like: display: 'bottom' or omit setting to use default 
+					lang: "zh", // Specify language like: lang: 'pl' or omit setting to use default
+					minDate: new Date(), // More info about minDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-minDate
+					dateFormat: 'yy-mm-dd',
+					stepMinute: 5 // More info about stepMinute: http://docs.mobiscroll.com/2-14-0/datetime#!opt-stepMinute
+				});
+				var dateNow = new Date();
+				dateNow.setMinutes(0);
+				$('#demo_datetime').mobiscroll().datetime({
+					theme: "sense-ui", // Specify theme like: theme: 'ios' or omit setting to use default 
+					mode: "scroller", // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+					display: "modal", // Specify display mode like: display: 'bottom' or omit setting to use default 
+					lang: "zh", // Specify language like: lang: 'pl' or omit setting to use default
+					dateFormat: 'yy-mm-dd DD',
+					minDate: dateNow, // More info about minDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-minDate
+					//maxDate: new Date(2014, 7, 30, 15, 44), // More info about maxDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-maxDate
+					stepMinute: 1 // More info about stepMinute: http://docs.mobiscroll.com/2-14-0/datetime#!opt-stepMinute
+				});
+				new wtCityPick.cityInit("provinceCity", true);
+				new wtCityPick.cityInit("city", false, choseCitySuc);
+				var yearArr = [];
+				var yearNow = new Date().getFullYear();
+				for (var i = 0; i < 100; i++) {
+					yearArr.push(yearNow - i);
+				}
+				new wtSelect.Init("yearSel", yearArr, {});
+				var cityHtml = "";
+				/*$
+					.each(
+						provinceJson,
+						function(k, p) {
+							var id = p.ProID;
+							cityHtml += '<li>' + p.ProName + id + '<ul>';
+							$
+								.each(
+									cityJson,
+									function(k, p) {
+										if (p.ProID == id) {
+											cityHtml += '<li>' + p.CityName + p.CityID + '</li>';
+										}
+									});
+							cityHtml += '</ul></li>';
+						});*/
+				/*$("#demo_treelist").html(cityHtml);
+				$('#demo_treelist').mobiscroll().treelist({
+					theme: "sense-ui", // Specify theme like: theme: 'ios' or omit setting to use default 
+					mode: "scroller", // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+					display: "modal", // Specify display mode like: display: 'bottom' or omit setting to use default 
+					lang: "zh", // Specify language like: lang: 'pl' or omit setting to use default
+					labels: ['省', '城市'] // More info about labels: http://docs.mobiscroll.com/2-14-0/list#!opt-labels
+				});*/
+				choseNum();
+			});
+
+			function choseCitySuc() {
+				alert(1)
+			};
+
+			function testAlert() {
+				//wtAlert('发的辅导费', testAlertSuc);
+				wtAlert('发的辅导费', function() {
+					alert(1);
+				});
+			}
+
+			function testConfirm() {
+				wtConfirm('发的辅asfdadadasd导费', function() {
+					alert(1);
+				});
+			}
+
+			function testCalendar() {
+				$("#calendar").wtCalendar({
+					upMonth: upMonth,
+					downMonth: downMonth
+				});
+			}
+
+			function upMonth(thisDate) {}
+
+			function downMonth(thisDate) {}
+
+			function choseNum() {
+				$("#choseNum1").wtSelNum({
+					inputname: "aaa",
+					setwrite: true,
+					addfun: addfun1
+				});
+				$("#choseNum2").wtSelNum({
+					inputname: "aaa",
+					addfun: addfun2
+				});
+				$("#choseNum3").wtSelNum({
+					inputname: "aaa",
+					addfun: addfun3
+				});
+			}
+
+			function addfun1(id, num) {
+				alert(num);
+			}
+
+			function addfun2(id, num) {
+				alert(num);
+			}
+
+			function addfun3(id, num) {
+				alert(num);
+			}
+		</script>
+		<style>
+			.tempdiv {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body style="height:1000px;">
+		<div class="wt-page">
+			<div class="tempdiv">
+				<button type="button" class="btn btn-default">（默认样式）Default</button>
+				<button type="button" class="btn btn-primary">（首选项）Primary</button>
+				<button type="button" class="btn btn-success">（成功）Success</button>
+				<button type="button" class="btn btn-info">（一般信息）Info</button>
+				<button type="button" class="btn btn-warning">（警告）Warning</button>
+				<button type="button" class="btn btn-danger">（危险）Danger</button>
+				<button type="button" class="btn btn-link">（链接）Link</button>
+			</div>
+			<div class="tempdiv">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						Action <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a>
+						</li>
+						<li><a href="#">Another action</a>
+						</li>
+						<li><a href="#">Something else here</a>
+						</li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tempdiv">
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default">Left</button>
+					<button type="button" class="btn btn-default">Middle</button>
+					<button type="button" class="btn btn-default">Right</button>
+				</div>
+			</div>
+			<div class="tempdiv">
+				<span class="btn btn-default" type="button">
+					<i class="glyphicon glyphicon-cloud"></i> 查询
+				</span>
+			</div>
+			<div class="tempdiv">
+				<div id="yearSel"></div>
+			</div>
+			<div class="tempdiv">
+				<input type="text" placeholder="点击选择日期" id="demo_date" />
+				<br />
+				<br />
+				<input type="text" placeholder="点击选择时间" id="demo_datetime" />
+			</div>
+			<div class="tempdiv">
+				<input type="text" readonly="readonly" placeholder="点击选择城市" id="provinceCity" />
+				<br />
+				<input type="text" readonly="readonly" placeholder="点击选择城市" id="city" />
+			</div>
+			<div class="tempdiv">
+				<input type="text" placeholder="这个是文本框" />
+			</div>
+			<div class="tempdiv">
+				<button type="button" class="btn btn-success" onclick="testAlert()">alert</button>
+				<button type="button" class="btn btn-warning" onclick="testConfirm()">（警告）Warning</button>
+			</div>
+			<div class="tempdiv">
+				<button type="button" class="btn btn-success" onclick="testCalendar()">日历</button>
+				<div id="calendar"></div>
+			</div>
+			<div class="tempdiv">
+				<input type="text" id="demo_treelist_dummy" value="" class="" placeholder="" readonly="">
+				<ul id="demo_treelist">
+				</ul>
+			</div>
+			<div class="tempdiv">
+				<div style="margin-left:20px;margin-bottom: 10px;" class="choseNum" id="choseNum1">
+				</div>
+				<div style="margin-left:20px;margin-bottom: 10px;" class="choseNum" id="choseNum2">
+				</div>
+				<div style="margin-left:20px;margin-bottom: 10px;" class="choseNum" id="choseNum3">
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
