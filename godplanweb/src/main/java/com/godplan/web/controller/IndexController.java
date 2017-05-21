@@ -1,7 +1,6 @@
 package com.godplan.web.controller;
 
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
-import org.quartz.ee.jmx.jboss.QuartzService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -178,19 +176,18 @@ public class IndexController extends AbstractController {
 	@ResponseBody
 	@RequestMapping(value = "/checkLogin", method = { RequestMethod.GET })
 	public JsonResponse checkLogin(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-
-		Enumeration params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			// 得到参数名
-			String name = params.nextElement().toString();
-			// System.out.println("name===========================" + name +
-			// "--");
-			// 得到参数对应值
-			String[] value = request.getParameterValues(name);
-			for (int i = 0; i < value.length; i++) {
-				System.out.println(value[i]);
-			}
-		}
+		// Enumeration params = request.getParameterNames();
+		// while (params.hasMoreElements()) {
+		// // 得到参数名
+		// String name = params.nextElement().toString();
+		// // System.out.println("name===========================" + name +
+		// // "--");
+		// // 得到参数对应值
+		// String[] value = request.getParameterValues(name);
+		// for (int i = 0; i < value.length; i++) {
+		// System.out.println(value[i]);
+		// }
+		// }
 		JsonResponse jr = new JsonResponse();
 		try {
 			UserVo user = SessionUtil.getUser(request);
@@ -261,6 +258,7 @@ public class IndexController extends AbstractController {
 				logger.info("开始处理");
 				if (WxUrl.AppId == null) {
 					WxAccount wxAccount = wxAccountService.getWxAccount();
+					logger.info("获取到微信参数：" + wxAccount.getAppId());
 					WxUrl.AppId = wxAccount.getAppId();
 					WxUrl.AppSecret = wxAccount.getAppSecret();
 					WxUrl.PayKey = wxAccount.getMchKey();

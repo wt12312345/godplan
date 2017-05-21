@@ -104,6 +104,8 @@
 				<value>com.godplan.entity.UserSys</value>
 				<value>com.godplan.entity.Menu</value>
 				<value>com.godplan.entity.User</value>
+				
+				<value>com.wt.wx.entity.WxAccount</value>
 			</list>
 		</property>
 		<!--配置Hibernate的属性 -->
