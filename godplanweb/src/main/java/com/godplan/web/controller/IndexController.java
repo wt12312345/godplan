@@ -73,9 +73,13 @@ public class IndexController extends AbstractController {
 			// 然后判断参数正确性
 			String loginName = TypeUtil.toString(request.getParameter("loginName"));
 			String password = TypeUtil.toString(request.getParameter("password"));
+			System.out.println(loginName + " 注册");
 			if (!Pattern.matches(Reg.USERNAME, loginName)) {
 				jr.setMsg("用户名格式不正确");
-			} else if (!Pattern.matches(Reg.PASSWORD, password)) {
+				// 前端加密了，这里
+				// } else if (!Pattern.matches(Reg.PASSWORD, password)) {
+			} else if (password.length() != 40) {
+				// 前端加密了，是40位
 				jr.setMsg("密码格式不正确");
 			} else {
 				User userCheckLoginNameUnique = userService.getByLoginName(loginName);
@@ -100,8 +104,11 @@ public class IndexController extends AbstractController {
 					user.setLoginName(loginName);
 					user.setPassword(MD5Util.string2MD5(password));
 					userService.saveOrUpdate(user);
-					user.setPassword("");
-					session.setAttribute(SessionName.User, user);
+					UserVo userVo = new UserVo();
+					userVo.setNickName(user.getNickName());
+					userVo.setOpenid(user.getOpenid());
+					userVo.setId(user.getId());
+					session.setAttribute(SessionName.User, userVo);
 					jr.setCode(BegCode.SUCCESS);
 					jr.setObj(user);
 					logger.info("新用户注册：" + loginName);
