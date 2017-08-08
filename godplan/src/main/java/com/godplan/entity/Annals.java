@@ -19,17 +19,14 @@ public class Annals extends AbstractEntity {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 0：冻结、1可用、-1删除
-	 */
-	@Column(columnDefinition = "int default 0")
-	private int status = 0;
 	@Column(length = 100)
 	private String title = "";
 	@Column(length = 1000)
 	private String tags = "";
 	@Lob
 	private String content = "";
+	@Column(columnDefinition = "bigint default 0")
+	private long orderByTime = 0;
 	@Column(columnDefinition = "int default 0")
 	private int year = 0;
 	@Column(columnDefinition = "int default 0")
@@ -44,14 +41,16 @@ public class Annals extends AbstractEntity {
 	private int second = 0;
 	@Column(columnDefinition = "int default 0")
 	private int level = 0;
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
+	/**
+	 * 1 人；2 战事；3 文学/定律；4 皇帝/朝代；5 天灾
+	 */
+	@Column(columnDefinition = "int default 0")
+	private int iconIndex = 0;
+	/**
+	 * 1 中国；2 其它
+	 */
+	@Column(columnDefinition = "int default 0")
+	private int groupIndex = 0;
 
 	public String getContent() {
 		return content;
@@ -131,6 +130,30 @@ public class Annals extends AbstractEntity {
 
 	public void setTags(String tags) {
 		this.tags = tags;
+	}
+
+	public int getIconIndex() {
+		return iconIndex;
+	}
+
+	public void setIconIndex(int iconIndex) {
+		this.iconIndex = iconIndex;
+	}
+
+	public int getGroupIndex() {
+		return groupIndex;
+	}
+
+	public void setGroupIndex(int groupIndex) {
+		this.groupIndex = groupIndex;
+	}
+
+	public long getOrderByTime() {
+		return orderByTime;
+	}
+
+	public void setOrderByTime(long orderByTime) {
+		this.orderByTime = orderByTime;
 	}
 
 }

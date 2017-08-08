@@ -7,17 +7,19 @@ import com.godplan.entity.Annals;
 
 public class AnnalsVo {
 	private long id = 0;
-	private int status = 0;
 	private String title = "";
 	private String tags = "";
 	private String content = "";
 	private int year = 0;
 	private int month = 0;
 	private int day = 0;
-	private int hour = 0;
-	private int minute = 0;
-	private int second = 0;
 	private int level = 0;
+	/**
+	 * 1 人；2 战事；3 文学/定律；4 皇帝/朝代；5 天灾；6 会议；7 创造/发明；
+	 */
+	private int iconIndex = 0;
+	private int groupIndex = 0;
+	private String groupName = "";
 
 	public static List<AnnalsVo> getVo(List<Annals> list) {
 		List<AnnalsVo> listVo = new ArrayList<AnnalsVo>();
@@ -37,19 +39,32 @@ public class AnnalsVo {
 		itemVo.setYear(item.getYear());
 		itemVo.setMonth(item.getMonth());
 		itemVo.setDay(item.getDay());
-		itemVo.setHour(item.getHour());
-		itemVo.setMinute(item.getMinute());
-		itemVo.setSecond(item.getSecond());
 		itemVo.setLevel(item.getLevel());
+		itemVo.setIconIndex(item.getIconIndex());
+		itemVo.setGroupIndex(item.getGroupIndex());
+		switch (itemVo.getGroupIndex()) {
+		case 1:
+			itemVo.setGroupName("中国");
+			break;
+		case 2:
+			itemVo.setGroupName("其它");
+			break;
+		default:
+			break;
+		}
 		return itemVo;
 	}
 
-	public int getStatus() {
-		return status;
+	public long getId() {
+		return id;
 	}
 
 	public String getTitle() {
 		return title;
+	}
+
+	public String getTags() {
+		return tags;
 	}
 
 	public String getContent() {
@@ -68,28 +83,24 @@ public class AnnalsVo {
 		return day;
 	}
 
-	public int getHour() {
-		return hour;
-	}
-
-	public int getMinute() {
-		return minute;
-	}
-
-	public int getSecond() {
-		return second;
-	}
-
 	public int getLevel() {
 		return level;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public int getIconIndex() {
+		return iconIndex;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
 	}
 
 	public void setContent(String content) {
@@ -108,36 +119,28 @@ public class AnnalsVo {
 		this.day = day;
 	}
 
-	public void setHour(int hour) {
-		this.hour = hour;
-	}
-
-	public void setMinute(int minute) {
-		this.minute = minute;
-	}
-
-	public void setSecond(int second) {
-		this.second = second;
-	}
-
 	public void setLevel(int level) {
 		this.level = level;
 	}
 
-	public long getId() {
-		return id;
+	public void setIconIndex(int iconIndex) {
+		this.iconIndex = iconIndex;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public int getGroupIndex() {
+		return groupIndex;
 	}
 
-	public String getTags() {
-		return tags;
+	public void setGroupIndex(int groupIndex) {
+		this.groupIndex = groupIndex;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
+	public String getGroupName() {
+		return groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
 }

@@ -27,8 +27,8 @@ import com.godplan.entity.Joke;
 import com.wt.web.dao.WtCondition;
 import com.wt.web.service.AbstractServiceImpl;
 
-@Service("quartzService")
-public class QuartzServiceImpl extends AbstractServiceImpl<Joke> implements QuartzService {
+@Service("quartzJokeService")
+public class QuartzJokeServiceImpl extends AbstractServiceImpl<Joke> implements QuartzJokeService {
 	@Resource
 	private JokeDao jokeDao;
 

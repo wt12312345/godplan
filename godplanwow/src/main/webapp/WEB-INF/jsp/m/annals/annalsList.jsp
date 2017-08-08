@@ -30,10 +30,11 @@
 					<table class="table table-bordered" id="tableList">
 						<thead>
 							<tr>
+								<th style="min-width:50px;">序号</th>
 								<th style="width:100px;">时间</th>
+								<th style="min-width:50px;">阵营</th>
 								<th>标题</th>
 								<th>介绍</th>
-								<th>标签</th>
 								<th>操作</th>
 							</tr>
 						</thead>
@@ -61,6 +62,24 @@
 								<th>内容</th>
 								<td><textarea class="form-control" name="content"
 										id="content"></textarea></td>
+							</tr>
+							<tr>
+								<th>阵营</th>
+								<td><select name="groupIndex" id="groupIndex"><option
+											value="1">中国</option>
+										<option value="2">其它</option></select></td>
+							</tr>
+							<tr>
+								<th>图标</th>
+								<td><select name="iconIndex" id="iconIndex"><option
+											value="1">人</option>
+										<option value="2">战事/领土</option>
+										<option value="3">文学/定律/记录/悖论</option>
+										<option value="4">皇帝/朝代/改革/政治</option>
+										<option value="5">天灾</option>
+										<option value="6">会议</option>
+										<option value="7">创造/发明/发现</option>
+								</select></td>
 							</tr>
 							<tr>
 								<th>标签</th>
@@ -101,7 +120,7 @@
 					var htmlArr = [];
 					for (var i = 0; i < arr.length; i++) {
 						var one = arr[i];
-						htmlArr[i] = createOneData(one);
+						htmlArr[i] = createOneData(one, i + 1);
 					}
 					$("#tableList tbody").html(htmlArr.join(''));
 				} else {
@@ -110,14 +129,14 @@
 			});
 		});
 	
-		function createOneData(one) {
+		function createOneData(one, index) {
 			var id = one.id;
-			var html = '<tr><td id="time' + id + '">' + one.year + '-'
-				+ one.month + '-' + one.day + ' ' + one.hour + ':'
-				+ one.minute + ':' + one.second
+			var html = '<tr><td>' + index
+				+ '</td><td id="time' + id + '">' + (one.year < 0 ? "公元前" : "公元") + one.year + '年'
+				+ one.month + '月' + one.day + '日'
+				+ '</td><td id="groupName' + id + '">' + one.groupName
 				+ '</td><td id="title' + id + '">' + one.title
 				+ '</td><td style="max-width:500px;" id="content' + id + '">' + one.content
-				+ '</td><td id="tags' + id + '">' + one.tags
 				+ '</td><td><span class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="editReady(' + one.id
 				+ ')"><i class="glyphicon glyphicon-pencil"></i></span></td></tr>';
 			return html;
@@ -132,9 +151,6 @@
 			$("#year").val(2016);
 			$("#month").val(1);
 			$("#day").val(1);
-			$("#hour").val(0);
-			$("#minute").val(0);
-			$("#second").val(0);
 		}
 		function editReady(_id) {
 			selectId = _id;
@@ -143,14 +159,13 @@
 					var one = data.obj;
 					$("#id").val(one.id);
 					$("#title").val(one.title);
+					$("#groupIndex").val(one.groupIndex);
+					$("#iconIndex").val(one.iconIndex);
 					$("#content").val(one.content);
 					$("#tags").val(one.tags);
 					$("#year").val(one.year);
 					$("#month").val(one.month);
 					$("#day").val(one.day);
-					$("#hour").val(one.hour);
-					$("#minute").val(one.minute);
-					$("#second").val(one.second);
 				} else {
 					alert(data.msg);
 				}
@@ -165,13 +180,18 @@
 					if (selectId > 0) {
 						$("#title" + selectId).html(one.title);
 						$("#content" + selectId).html(one.content);
-						$("#tags" + selectId).html(one.tags);
-						$("#time" + selectId).html(
-							one.year + '-' + one.month + '-' + one.day
-							+ ' ' + one.hour + ':' + one.minute
-							+ ':' + one.second);
+						switch (one.groupIndex) {
+						case 1:
+							$("#groupName" + selectId).html("中国");
+							break;
+						case 2:
+							$("#groupName" + selectId).html("其它");
+							break;
+						}
+						$("#time" + selectId).html(one.year < 0 ? "公元前" : "公元" +
+						one.year + '年' + one.month + '月' + one.day + '日');
 					} else {
-						$("#tableList tbody").append(createOneData(one));
+						$("#tableList tbody").append(createOneData(one, 0));
 					}
 					$('#myModal').modal('hide');
 					alert("保存成功");

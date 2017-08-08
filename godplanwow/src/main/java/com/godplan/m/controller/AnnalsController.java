@@ -22,6 +22,12 @@ import com.wt.web.controller.AbstractController;
 import com.wt.web.domain.JsonResponse;
 import com.wt.web.domain.Page;
 
+/**
+ * 编年史
+ * 
+ * @author wt12312345
+ *
+ */
 @Controller
 @RequestMapping("/m")
 public class AnnalsController extends AbstractController {
@@ -30,14 +36,37 @@ public class AnnalsController extends AbstractController {
 	private AnnalsService annalsService;
 
 	@ResponseBody
+	@RequestMapping(value = "/annalses/orderByTime", method = { RequestMethod.GET })
+	public JsonResponse annalsListRefreshOrderByTime(HttpServletRequest request, HttpServletResponse response) {
+		JsonResponse jr = new JsonResponse();
+		try {
+			Page page = new Page(0, 0, -1);
+			String keyWord = TypeUtil.toString(request.getParameter("keyWord"));
+			String orderBy = TypeUtil.toString(request.getParameter("orderBy"));
+			List<Annals> listItem = annalsService.getList(page, orderBy, new SearchBo(keyWord));
+			for (int i = 0; i < listItem.size(); i++) {
+				Annals item = listItem.get(i);
+				long orderByTime = item.getSecond() + item.getMinute() * 100 + item.getHour() * 10000
+						+ item.getDay() * 1000000 + item.getMonth() * 100000000 + item.getYear() * 10000000000L;
+				item.setOrderByTime(orderByTime);
+				annalsService.saveOrUpdate(item);
+			}
+			jr.setCode(BegCode.SUCCESS);
+		} catch (Exception e) {
+			setJsonFailed(jr, e);
+		}
+		return jr;
+	}
+
+	@ResponseBody
 	@RequestMapping(value = "/annalses", method = { RequestMethod.GET })
 	public JsonResponse annalsList(HttpServletRequest request, HttpServletResponse response) {
 		JsonResponse jr = new JsonResponse();
 		Page page = new Page(0, 0, -1);
 		String keyWord = TypeUtil.toString(request.getParameter("keyWord"));
 		String orderBy = TypeUtil.toString(request.getParameter("orderBy"));
-		List<Annals> listAnnals = annalsService.getList(page, orderBy, new SearchBo(keyWord));
-		jr.setObj(listAnnals);
+		List<Annals> listItem = annalsService.getList(page, orderBy, new SearchBo(keyWord));
+		jr.setObj(AnnalsVo.getVo(listItem));
 		jr.setCode(BegCode.SUCCESS);
 		return jr;
 	}
@@ -62,30 +91,38 @@ public class AnnalsController extends AbstractController {
 	}
 
 	@ResponseBody
+	@RequestMapping(value = "/annalses", method = { RequestMethod.POST })
+	public JsonResponse annalsEdit(HttpServletRequest request, HttpServletResponse response, AnnalsVo itemVo) {
+		return annalsEdit(request, response, 0, itemVo);
+	}
+
+	@ResponseBody
 	@RequestMapping(value = "/annalses/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
 	public JsonResponse annalsEdit(HttpServletRequest request, HttpServletResponse response, @PathVariable long id,
-			AnnalsVo annalsVo) {
+			AnnalsVo itemVo) {
 		JsonResponse jr = new JsonResponse();
 		try {
 			Annals item = null;
-			if (annalsVo.getId() == 0) {
+			if (itemVo.getId() == 0) {
 				item = new Annals();
 			} else {
-				item = annalsService.getEntity(annalsVo.getId());
+				item = annalsService.getEntity(itemVo.getId());
 				if (item == null) {
 					jr.setMsg("数据不存在");
 					return jr;
 				}
 			}
-			item.setContent(annalsVo.getContent());
-			item.setTitle(annalsVo.getTitle());
-			item.setYear(annalsVo.getYear());
-			item.setMonth(annalsVo.getMonth());
-			item.setDay(annalsVo.getDay());
-			item.setHour(annalsVo.getHour());
-			item.setMinute(annalsVo.getMinute());
-			item.setSecond(annalsVo.getSecond());
-			item.setTags(annalsVo.getTags());
+			item.setContent(itemVo.getContent());
+			item.setTitle(itemVo.getTitle());
+			item.setYear(itemVo.getYear());
+			item.setMonth(itemVo.getMonth());
+			item.setDay(itemVo.getDay());
+			item.setTags(itemVo.getTags());
+			item.setGroupIndex(itemVo.getGroupIndex());
+			item.setIconIndex(itemVo.getIconIndex());
+			long orderByTime = item.getSecond() + item.getMinute() * 100 + item.getHour() * 10000
+					+ item.getDay() * 1000000 + item.getMonth() * 100000000 + item.getYear() * 10000000000L;
+			item.setOrderByTime(orderByTime);
 			annalsService.saveOrUpdate(item);
 			jr.setObj(AnnalsVo.getVo(item));
 			jr.setCode(BegCode.SUCCESS);

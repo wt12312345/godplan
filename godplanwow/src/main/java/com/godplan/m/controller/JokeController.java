@@ -22,6 +22,12 @@ import com.wt.web.controller.AbstractController;
 import com.wt.web.domain.JsonResponse;
 import com.wt.web.domain.Page;
 
+/**
+ * 阅无止境
+ * 
+ * @author wt12312345
+ *
+ */
 @Controller
 @RequestMapping("/m")
 public class JokeController extends AbstractController {

@@ -28,12 +28,12 @@ public class AnnalsServiceImpl extends AbstractServiceImpl<Annals> implements An
 	@Override
 	public List<Annals> getList(Page page, String orderBy, SearchBo search) {
 		List<WtCondition> conditions = new ArrayList<WtCondition>();
-		conditions.add(new WtCondition(WtCondition.DESC, "year"));
-		conditions.add(new WtCondition(WtCondition.DESC, "month"));
-		conditions.add(new WtCondition(WtCondition.DESC, "day"));
-		conditions.add(new WtCondition(WtCondition.DESC, "hour"));
-		conditions.add(new WtCondition(WtCondition.DESC, "minute"));
-		conditions.add(new WtCondition(WtCondition.DESC, "second"));
+		conditions.add(new WtCondition(WtCondition.ASC, "year"));
+		conditions.add(new WtCondition(WtCondition.ASC, "month"));
+		conditions.add(new WtCondition(WtCondition.ASC, "day"));
+		conditions.add(new WtCondition(WtCondition.ASC, "hour"));
+		conditions.add(new WtCondition(WtCondition.ASC, "minute"));
+		conditions.add(new WtCondition(WtCondition.ASC, "second"));
 		String keyWord = search.getKeyWord();
 		if (!TypeUtil.isEmpty(keyWord)) {
 			conditions.add(new WtCondition(new WtCondition(WtCondition.LIKE, "name", keyWord),
