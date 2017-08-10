@@ -94,6 +94,7 @@
 				<value>com.godplan.entity.HeadCombo</value>
 				<value>com.godplan.entity.Joke</value>
 				<value>com.godplan.entity.Buzzword</value>
+				<value>com.godplan.entity.Emoji</value>
 				
 				<value>com.godplan.entity.RecordChose</value>
 				<value>com.godplan.entity.RecordSMS</value>
@@ -144,8 +145,6 @@
 		<property name="location" value="${remote.trendsimg}" />
 	</bean>
 
-
-
 	<bean id="timerDataListenerDetail"
 		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject" ref="timerDataListener" />
@@ -164,10 +163,22 @@
 			<value>0</value>
 		</property>
 	</bean>
+	<!-- 阅无止境，每1小时一次 -->
+	<bean id="jokeTimerQuartzDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="jokeTimerQuartz" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+	<bean id="jokeTimerQuartzTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jokeTimerQuartzDetail" />
+		<property name="cronExpression" value=" 0 0 0/1 * * ?" />
+	</bean>
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
 				<ref bean="timerDataListenerTrigger" />
+				<ref bean="jokeTimerQuartzTrigger" />
 			</list>
 		</property>
 	</bean>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.godplan.entity.Annals;
 import com.godplan.m.service.AnnalsService;
+import com.godplan.m.service.QuartzAnnalsService;
 import com.godplan.m.service.bo.SearchBo;
 import com.godplan.m.vo.AnnalsVo;
 import com.wt.base.constant.BegCode;
@@ -34,6 +35,8 @@ public class AnnalsController extends AbstractController {
 
 	@Resource
 	private AnnalsService annalsService;
+	@Resource
+	private QuartzAnnalsService quartzAnnalsService;
 
 	@ResponseBody
 	@RequestMapping(value = "/annalses/orderByTime", method = { RequestMethod.GET })
@@ -54,6 +57,19 @@ public class AnnalsController extends AbstractController {
 			jr.setCode(BegCode.SUCCESS);
 		} catch (Exception e) {
 			setJsonFailed(jr, e);
+		}
+		return jr;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/annalses/html", method = { RequestMethod.GET })
+	public JsonResponse annalsRefreshHtml(HttpServletRequest request, HttpServletResponse response) {
+		JsonResponse jr = new JsonResponse();
+		try {
+			quartzAnnalsService.createIndexHtml();
+			jr.setCode(BegCode.SUCCESS);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return jr;
 	}

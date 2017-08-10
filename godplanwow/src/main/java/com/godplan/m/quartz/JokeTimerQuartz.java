@@ -20,14 +20,14 @@ public class JokeTimerQuartz {
 
 	private Logger logger = Logger.getLogger(JokeTimerQuartz.class);
 	@Resource
-	private QuartzJokeService quartzService;
+	private QuartzJokeService quartzJokeService;
 
 	@Transactional
 	public void execute() {
 		try {
 			long time = System.currentTimeMillis();
 			logger.info("系统定时任务：生成index?.html文件");
-			quartzService.createIndexHtml();
+			quartzJokeService.createIndexHtml();
 			logger.info("系统定时任务：生成index?.html文件，耗时："
 					+ (System.currentTimeMillis() - time));
 		} catch (Exception e) {
@@ -35,11 +35,13 @@ public class JokeTimerQuartz {
 		}
 	}
 
-	public QuartzJokeService getQuartzService() {
-		return quartzService;
+	public QuartzJokeService getQuartzJokeService() {
+		return quartzJokeService;
 	}
 
-	public void setQuartzService(QuartzJokeService quartzService) {
-		this.quartzService = quartzService;
+	public void setQuartzJokeService(QuartzJokeService quartzJokeService) {
+		this.quartzJokeService = quartzJokeService;
 	}
+	
+	
 }

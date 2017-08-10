@@ -43,7 +43,7 @@ public class QuartzJokeServiceImpl extends AbstractServiceImpl<Joke> implements 
 		List<WtCondition> conditions = new ArrayList<WtCondition>();
 		conditions.add(new WtCondition(WtCondition.EQ, "status", EnumCom.Enable.getIndex()));
 		List<Joke> listJoke = jokeDao.findByCondition(conditions);
-		String webRoot = "http://yue21.com/";
+		String webRoot = "http://yue21.com/endless.html";
 		Document doc = Jsoup.connect(webRoot).get();
 
 		Element content = doc.getElementById("jokeList");
@@ -67,7 +67,7 @@ public class QuartzJokeServiceImpl extends AbstractServiceImpl<Joke> implements 
 		// content.html(content.html() + htmlBuilder.toString());
 		content.html(htmlBuilder.toString());
 		String htmlResult = doc.html();
-		String filePath = String.valueOf("/usr/local/godplan/www/index.html");
+		String filePath = String.valueOf("/usr/local/godplan/www/endless.html");
 		// filePath = String.valueOf("C:/workspace/临时存放处/index.html");
 		saveFile(filePath, htmlResult);
 
@@ -103,9 +103,9 @@ public class QuartzJokeServiceImpl extends AbstractServiceImpl<Joke> implements 
 			content.html(htmlBuilder.toString());
 			htmlResult = doc.html();
 			// 保存文件
-			String fileName = "index" + (i + 1) + ".html";
+			String fileName = "endless" + (i + 1) + ".html";
 			// 此次所有的文件名，供site.txt使用
-			listFileName.add(webRoot + fileName);
+			listFileName.add("http://yue21.com/" + fileName);
 			filePath = String.valueOf("/usr/local/godplan/www/" + fileName);
 			// filePath = String.valueOf("C:/workspace/临时存放处/" + fileName);
 			saveFile(filePath, htmlResult);

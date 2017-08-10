@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.godplan.constant.EnumCom;
 import com.godplan.entity.Joke;
 import com.godplan.m.service.JokeService;
+import com.godplan.m.service.QuartzJokeService;
 import com.godplan.m.service.bo.SearchBo;
 import com.wt.base.constant.BegCode;
 import com.wt.base.util.TypeUtil;
@@ -34,7 +35,22 @@ public class JokeController extends AbstractController {
 
 	@Resource
 	private JokeService jokeService;
-
+	@Resource
+	private QuartzJokeService quartzJokeService;
+	
+	@ResponseBody
+	@RequestMapping(value = "/jokes/html", method = { RequestMethod.GET })
+	public JsonResponse jokeRefreshHtml(HttpServletRequest request, HttpServletResponse response) {
+		JsonResponse jr = new JsonResponse();
+		try {
+			quartzJokeService.createIndexHtml();
+			jr.setCode(BegCode.SUCCESS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jr;
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/jokes", method = { RequestMethod.GET })
 	public JsonResponse jokeList(HttpServletRequest request, HttpServletResponse response) {

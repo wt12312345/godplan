@@ -55,9 +55,7 @@ public class QuartzAnnalsServiceImpl extends AbstractServiceImpl<Annals> impleme
 			if (item.getYear() < 0) {
 				time += "公元前" + item.getYear() * -1;
 			} else {
-				if (item.getYear() < 0) {
-					time += "公元" + item.getYear();
-				}
+				time += "公元" + item.getYear();
 			}
 			if (!listTime.contains(time)) {
 				listTime.add(time);
